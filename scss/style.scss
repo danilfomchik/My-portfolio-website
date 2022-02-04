@@ -1,0 +1,126 @@
+@import 'mixins';
+@import 'variables';
+
+
+body{
+    font-family: $mainFont;
+    background-color: $BGColor1;
+}
+
+.header-container{
+    padding: 0px 10px;
+
+    @include container(1200px, 15px auto 0px);
+    @include flexDisplay(flex, row, space-between, center);
+    @include link(white, $mainColor);
+
+    .menu-list{
+        display: flex;
+
+        li{
+            padding: 0px 15px;
+        }
+    }
+}
+
+.about-section{
+    background-image: url($background1);
+}
+
+.greeting-block{
+    @include container(1200px, 0px auto);
+    
+    .greeting-block__wrapper{
+        padding: 20px;
+    }
+
+    .greeting-block__container{
+        position: relative;
+        @include flexDisplay(flex, row, space-between, center);
+
+        .main-info{
+            width: 40%;
+            height: auto;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            position: relative;
+            left: 55px;
+
+            @include glassMorph;
+
+            .salutation{
+                font-size: 27px;
+                color: white;
+
+                .myNameis{
+                    font-size: 40px;
+                }
+
+                .name{
+                    font-weight: bold;
+                    font-size: 45px;
+                    color: $mainColor;
+                    letter-spacing: 0.1em;
+                }
+            }
+
+            .speciality{
+                font-size: 30px;
+                color: white;
+                letter-spacing: 6px;
+                font-family: $mainFont2;
+            }
+
+        }
+
+        .avatar-container{
+            width: 60%;
+        }
+    }
+
+    .greeting-block__social{
+        @include flexDisplay(flex, row, flex-start, center);
+
+        .greeting-block__divider{
+            height: 1px;
+            background-color: white;
+            width: 75px;
+            margin: 0px 20px;
+        }
+
+        .social-list{
+            @include flexDisplay(flex, row, flex-start, center);
+            
+            .social-list_li{
+                padding: 0px 7px;
+
+                .menu-item i{
+                    color: $mainColor;
+                }
+            }
+        }
+    }
+}
+
+.services-title{
+
+    .back-title{
+        @include title(10vh, 500, 6px, center, none);
+
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+        color: transparent;
+        opacity: 0.3;
+        font-family: "Barlow Condensed", sans-serif;
+    }
+
+    .title{
+        @include title(9vh, 700, 4px, center, uppercase);
+
+        text-shadow: 0 8px rgb(255 255 255 / 5%);
+        line-height: 1.4rem;
+        color: #fff;
+        word-wrap: break-word;
+        position: relative;
+        bottom: 4vh;
+    }
+}

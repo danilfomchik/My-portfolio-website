@@ -1,0 +1,182 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #11141b;
+}
+
+.header-container {
+  padding: 0px 10px;
+  max-width: 1200px;
+  margin: 15px auto 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header-container a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  line-height: 1;
+}
+.header-container a::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #75DAB4;
+  content: "";
+  -webkit-transition: width 0.3s ease-out;
+  transition: width 0.3s ease-out;
+}
+.header-container a:hover {
+  color: #75DAB4;
+}
+.header-container a:hover::after {
+  width: 100%;
+}
+.header-container .menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header-container .menu-list li {
+  padding: 0px 15px;
+}
+
+.about-section {
+  background-image: url("../pictures/background2.png");
+}
+
+.greeting-block {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.greeting-block .greeting-block__wrapper {
+  padding: 20px;
+}
+.greeting-block .greeting-block__container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.greeting-block .greeting-block__container .main-info {
+  width: 40%;
+  height: auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  position: relative;
+  left: 55px;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+.greeting-block .greeting-block__container .main-info .salutation {
+  font-size: 27px;
+  color: white;
+}
+.greeting-block .greeting-block__container .main-info .salutation .myNameis {
+  font-size: 40px;
+}
+.greeting-block .greeting-block__container .main-info .salutation .name {
+  font-weight: bold;
+  font-size: 45px;
+  color: #75DAB4;
+  letter-spacing: 0.1em;
+}
+.greeting-block .greeting-block__container .main-info .speciality {
+  font-size: 30px;
+  color: white;
+  letter-spacing: 6px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.greeting-block .greeting-block__container .avatar-container {
+  width: 60%;
+}
+.greeting-block .greeting-block__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.greeting-block .greeting-block__social .greeting-block__divider {
+  height: 1px;
+  background-color: white;
+  width: 75px;
+  margin: 0px 20px;
+}
+.greeting-block .greeting-block__social .social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.greeting-block .greeting-block__social .social-list .social-list_li {
+  padding: 0px 7px;
+}
+.greeting-block .greeting-block__social .social-list .social-list_li .menu-item i {
+  color: #75DAB4;
+}
+
+.services-title .back-title {
+  font-size: 10vh;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-align: center;
+  text-transform: none;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  opacity: 0.3;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.services-title .title {
+  font-size: 9vh;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 8px rgba(255, 255, 255, 0.05);
+  line-height: 1.4rem;
+  color: #fff;
+  word-wrap: break-word;
+  position: relative;
+  bottom: 4vh;
+}
