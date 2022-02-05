@@ -52,3 +52,15 @@
     text-align: $align;
     text-transform: $textTransf;
 }
+
+//scroll animation
+@mixin bgGradient {
+    background:
+      $colorOutlineFade
+      linear-gradient(
+        transparent 0%,
+        transparent 50%,
+        $colorOutline 50%,
+        $colorOutline 100%
+      );
+}
