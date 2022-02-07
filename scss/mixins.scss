@@ -64,3 +64,21 @@
         $colorOutline 100%
       );
 }
+
+@mixin transform-style {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@mixin backface-visibility {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+@mixin card-3d__img-position($zIndex) {
+    display: block;
+    position: absolute;
+    z-index: $zIndex;
+}
