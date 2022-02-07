@@ -771,49 +771,91 @@ body {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
+.services-block .services-container .card-3d-wrapper .card-3d-container .card-back .pricing-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
 .services-block .services-container .card-3d-wrapper .card-3d-container .card-back .pricing-wrap h4 {
   color: #0c1c00;
+  text-align: right;
 }
-.services-block .services-container .card-3d-wrapper .card-3d-container .card-back .pricing-wrap h4::before {
+.services-block .services-container .card-3d-wrapper .card-3d-container .card-back .pricing-wrap .border-block {
   background: linear-gradient(217deg, #648946, #a3c984);
 }
 .services-block .pricing-wrap {
-  position: relative;
-  padding-top: 160px;
   width: 100%;
-  display: block;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   z-index: 1;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-.services-block .pricing-wrap h4 {
+.services-block .pricing-wrap .card-3d__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 20px;
+  z-index: -1;
+  position: relative;
+}
+.services-block .pricing-wrap .card-3d__title h4 {
   position: relative;
   width: 100%;
   display: block;
-  text-align: center;
+  text-align: left;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
   font-size: 22px;
-  line-height: 1.7;
+  line-height: 4;
   color: #102770;
   -webkit-transform: translate3d(0, 0, 35px) perspective(100px);
           transform: translate3d(0, 0, 35px) perspective(100px);
+  padding: 0px 20px;
 }
-.services-block .pricing-wrap h4:before {
+.services-block .pricing-wrap .card-3d__title .border-block {
   position: absolute;
   content: "";
   z-index: -1;
   background: linear-gradient(217deg, #448ad5, #b8eaf9);
-  width: 70px;
+  width: 80px;
   height: 70px;
   display: block;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
   -webkit-box-shadow: 0 6px 20px 0 rgba(16, 39, 112, 0.3);
           box-shadow: 0 6px 20px 0 rgba(16, 39, 112, 0.3);
   -webkit-animation: border-transform 6s linear infinite;
@@ -828,9 +870,9 @@ body {
   display: block;
   position: absolute;
   z-index: 5;
-  left: -160px;
-  top: -50px;
-  width: calc(80% + 160px);
+  right: -95px;
+  bottom: 0;
+  width: calc(30% + 160px);
   -webkit-transform: translate3d(0, 0, 45px) perspective(100px);
           transform: translate3d(0, 0, 45px) perspective(100px);
   opacity: 1;
@@ -850,78 +892,13 @@ body {
   transition: transform 400ms ease, opacity 200ms 150ms ease;
   transition: transform 400ms ease, opacity 200ms 150ms ease, -webkit-transform 400ms ease;
 }
-.services-block .pricing-wrap .img-2 {
-  display: block;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  overflow: hidden;
-  width: 100%;
-  -webkit-transform: translate3d(0, 0, 15px) perspective(100px);
-          transform: translate3d(0, 0, 15px) perspective(100px);
-}
-.services-block .pricing-wrap .img-3 {
-  display: block;
-  position: absolute;
-  z-index: 5;
-  right: -20px;
-  top: -40px;
-  width: calc(60% + 20px);
-  -webkit-transform: translate3d(0, 0, 55px) perspective(100px) scale(1);
-          transform: translate3d(0, 0, 55px) perspective(100px) scale(1);
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transition: opacity 200ms 1300ms ease, -webkit-transform 300ms 1300ms ease;
-  transition: opacity 200ms 1300ms ease, -webkit-transform 300ms 1300ms ease;
-  transition: transform 300ms 1300ms ease, opacity 200ms 1300ms ease;
-  transition: transform 300ms 1300ms ease, opacity 200ms 1300ms ease, -webkit-transform 300ms 1300ms ease;
-}
-.services-block .pricing-wrap .img-3.passiveImg {
-  opacity: 0;
-  -webkit-transform: translate3d(-50px, 5px, 55px) perspective(100px) scale(0.4);
-          transform: translate3d(-50px, 5px, 55px) perspective(100px) scale(0.4);
-  pointer-events: none;
-  -webkit-transition: opacity 200ms 150ms ease, -webkit-transform 400ms ease;
-  transition: opacity 200ms 150ms ease, -webkit-transform 400ms ease;
-  transition: transform 400ms ease, opacity 200ms 150ms ease;
-  transition: transform 400ms ease, opacity 200ms 150ms ease, -webkit-transform 400ms ease;
-}
-.services-block .pricing-wrap .img-6 {
-  display: block;
-  position: absolute;
-  z-index: 5;
-  right: -20px;
-  bottom: -55px;
-  width: calc(20% + 30px);
-  -webkit-transform: translate3d(0, 0, 25px) perspective(100px) scale(1);
-          transform: translate3d(0, 0, 25px) perspective(100px) scale(1);
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transition: opacity 200ms 1300ms ease, -webkit-transform 300ms 1300ms ease;
-  transition: opacity 200ms 1300ms ease, -webkit-transform 300ms 1300ms ease;
-  transition: transform 300ms 1300ms ease, opacity 200ms 1300ms ease;
-  transition: transform 300ms 1300ms ease, opacity 200ms 1300ms ease, -webkit-transform 300ms 1300ms ease;
-}
-.services-block .pricing-wrap .img-6.passiveImg {
-  opacity: 0;
-  -webkit-transform: translate3d(0, 0, 25px) perspective(100px) scale(0.4);
-          transform: translate3d(0, 0, 25px) perspective(100px) scale(0.4);
-  pointer-events: none;
-  -webkit-transition: opacity 200ms 150ms ease, -webkit-transform 400ms ease;
-  transition: opacity 200ms 150ms ease, -webkit-transform 400ms ease;
-  transition: transform 400ms ease, opacity 200ms 150ms ease;
-  transition: transform 400ms ease, opacity 200ms 150ms ease, -webkit-transform 400ms ease;
-}
 .services-block .pricing-wrap .img-4 {
   display: block;
   position: absolute;
   z-index: 5;
   left: -60px;
   top: -60px;
-  width: calc(65% + 60px);
+  width: calc(40% + 60px);
   -webkit-transform: translate3d(0, 0, 45px) perspective(100px) scale(0.5);
           transform: translate3d(0, 0, 45px) perspective(100px) scale(0.5);
   opacity: 0;
@@ -940,58 +917,6 @@ body {
   transition: opacity 300ms 1200ms ease, -webkit-transform 400ms 1200ms ease;
   transition: transform 400ms 1200ms ease, opacity 300ms 1200ms ease;
   transition: transform 400ms 1200ms ease, opacity 300ms 1200ms ease, -webkit-transform 400ms 1200ms ease;
-}
-.services-block .pricing-wrap .img-5 {
-  display: block;
-  position: absolute;
-  z-index: 6;
-  right: -70px;
-  top: -50px;
-  width: calc(60% + 70px);
-  -webkit-transform: translate3d(0, 0, 35px) perspective(100px) scale(0.5) rotate(0deg);
-          transform: translate3d(0, 0, 35px) perspective(100px) scale(0.5) rotate(0deg);
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: opacity 200ms 250ms ease, -webkit-transform 400ms 100ms ease;
-  transition: opacity 200ms 250ms ease, -webkit-transform 400ms 100ms ease;
-  transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
-  transition: transform 400ms 100ms ease, opacity 200ms 250ms ease, -webkit-transform 400ms 100ms ease;
-}
-.services-block .pricing-wrap .img-5.activeImg {
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transform: translate3d(0, 0, 35px) perspective(100px) scale(1) rotate(10deg);
-          transform: translate3d(0, 0, 35px) perspective(100px) scale(1) rotate(10deg);
-  -webkit-transition: opacity 300ms 1300ms ease, -webkit-transform 400ms 1300ms ease;
-  transition: opacity 300ms 1300ms ease, -webkit-transform 400ms 1300ms ease;
-  transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
-  transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease, -webkit-transform 400ms 1300ms ease;
-}
-.services-block .pricing-wrap .img-7 {
-  display: block;
-  position: absolute;
-  z-index: 6;
-  right: -30px;
-  bottom: -65px;
-  width: calc(25% + 30px);
-  -webkit-transform: translate3d(0, 0, 35px) perspective(100px) scale(0.5);
-          transform: translate3d(0, 0, 35px) perspective(100px) scale(0.5);
-  opacity: 0;
-  pointer-events: none;
-  -webkit-transition: opacity 200ms 250ms ease, -webkit-transform 400ms 100ms ease;
-  transition: opacity 200ms 250ms ease, -webkit-transform 400ms 100ms ease;
-  transition: transform 400ms 100ms ease, opacity 200ms 250ms ease;
-  transition: transform 400ms 100ms ease, opacity 200ms 250ms ease, -webkit-transform 400ms 100ms ease;
-}
-.services-block .pricing-wrap .img-7.activeImg {
-  opacity: 1;
-  pointer-events: auto;
-  -webkit-transform: translate3d(0, 0, 35px) perspective(100px) scale(1);
-          transform: translate3d(0, 0, 35px) perspective(100px) scale(1);
-  -webkit-transition: opacity 300ms 1300ms ease, -webkit-transform 400ms 1300ms ease;
-  transition: opacity 300ms 1300ms ease, -webkit-transform 400ms 1300ms ease;
-  transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease;
-  transition: transform 400ms 1300ms ease, opacity 300ms 1300ms ease, -webkit-transform 400ms 1300ms ease;
 }
 .services-block .flip {
   -webkit-transform: rotateY(180deg);
