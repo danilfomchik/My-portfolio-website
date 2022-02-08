@@ -39,10 +39,11 @@
 
 }
 
-@mixin glassMorph {
-    background: rgba(255, 255, 255, .2);
+@mixin glassMorph($background, $blur) {
+    border-radius: $servicesBR;
+    background: $background;
     -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur($blur);
 }
 
 @mixin title($fontSize, $fontWeight, $letterSpacing, $align, $textTransf) {
