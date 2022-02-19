@@ -1,0 +1,28 @@
+{
+  "name": "my-portfolio-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilfomchik/My-portfolio-website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilfomchik/My-portfolio-website/issues"
+  },
+  "homepage": "https://github.com/danilfomchik/My-portfolio-website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.8",
+    "webpack": "^5.69.1",
+    "webpack-stream": "^7.0.0"
+  }
+}
