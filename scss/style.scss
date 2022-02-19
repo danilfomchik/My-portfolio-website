@@ -196,6 +196,7 @@ body{
         background-color: #c3c3c329;
         margin: 0px 5px;
         pointer-events: all;
+        z-index: 1000;
       }
       
       .active{
@@ -473,3 +474,27 @@ body{
     bottom: 4vh;
   }
 }
+
+// //cursor
+// #cursor, #aura{
+//   position: absolute;
+//   border-radius: 100%;
+//   transition: .5s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
+//   user-select: none;
+//   pointer-events: none;
+//   z-index: 9999;
+// }
+
+// #cursor{
+//   width: 8px;
+//   height: 8px;
+//   background-color: rgba(#fff, .5);
+// }
+
+// #aura{
+//   width: 46px;
+//   height: 46px;
+//   border: 1px solid rgba(#fff, .2);
+//   background-color: rgba(#fff, .27);
+//   transform: translate(5px, 5px);
+// }
