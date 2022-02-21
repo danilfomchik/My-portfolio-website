@@ -195,7 +195,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #11141b;
+  background-color: #0c0f16;
 }
 
 .header-container {
@@ -368,11 +368,11 @@ body {
 
 .services-block {
   background-image: url("../pictures/pattern-lines.png");
+  margin-top: 5rem;
 }
 .services-block .services-wrapper {
   z-index: 1;
-  margin-bottom: 40px;
-  padding: 40px 0px;
+  padding: 0px 0px 40px;
 }
 .services-block .services-container {
   padding-bottom: 20px;
@@ -415,9 +415,9 @@ body {
 }
 .services-block .services-container .card-3d-wrapper {
   position: relative;
-  width: 40vw;
+  width: 700px;
   max-width: calc(100% - 20px);
-  height: 65vh;
+  height: 500px;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   margin-top: 90px;
@@ -569,27 +569,83 @@ body {
   transform: rotate(180deg);
 }
 
-.services-title .back-title {
-  font-size: 10vh;
+.projects-title__wrapper {
+  position: relative;
+  padding: 40px 10px;
+}
+.projects-title__wrapper .projects-title__main p {
+  padding-top: 10px;
+  color: white;
+  font-size: 20px;
+}
+.projects-title__wrapper .projects-title__main h2 {
+  color: white;
+  font-size: 80px;
   font-weight: 500;
-  letter-spacing: 6px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 90px;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.projects-title__wrapper .bg-title {
+  font-size: calc( 0.0555555556 * 100vw + 53.3333333333px );
+  font-weight: bold;
+  letter-spacing: 30px;
   text-align: center;
-  text-transform: none;
+  text-transform: uppercase;
+  line-height: initial;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
   color: transparent;
   opacity: 0.3;
-  font-family: "Barlow Condensed", sans-serif;
 }
-.services-title .title {
-  font-size: 9vh;
+
+.page-title {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.page-title .title-phrase {
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.5;
+  color: #75DAB4;
+  position: relative;
+  top: 10px;
+}
+.page-title .title {
+  font-size: 65px;
   font-weight: 700;
   letter-spacing: 4px;
   text-align: center;
   text-transform: uppercase;
+  line-height: initial;
   text-shadow: 0 8px rgba(255, 255, 255, 0.05);
-  line-height: 1.4rem;
   color: #fff;
   word-wrap: break-word;
   position: relative;
-  bottom: 4vh;
+  bottom: 40px;
+}
+.page-title .back-title {
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: 6px;
+  text-align: center;
+  text-transform: none;
+  line-height: 4rem;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  opacity: 0.3;
+  font-family: "Barlow Condensed", sans-serif;
 }

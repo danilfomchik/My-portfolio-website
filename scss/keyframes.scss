@@ -35,7 +35,7 @@
     }
     6% { 
       opacity: 1;
-      transform: scale(0.9) translateY($posTrackball/4);
+      transform: scale(0.9) translateY(calc($posTrackball / 4));
     }
     14% {
       opacity: 0;
@@ -55,7 +55,7 @@
     }
     36% { 
       opacity: 1;
-      transform: scale(0.9) translateY($posTrackball/4);
+      transform: scale(0.9) translateY(calc($posTrackball / 4));
     }
     44% {
       opacity: 0;
@@ -75,7 +75,7 @@
     }
     66% { 
       opacity: 1;
-      transform: scale(0.9) translateY($posTrackball/4);
+      transform: scale(0.9) translateY(calc($posTrackball / 4));
     }
     74% {
       opacity: 0;

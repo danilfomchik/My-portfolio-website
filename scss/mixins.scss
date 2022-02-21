@@ -46,12 +46,13 @@
     backdrop-filter: blur($blur);
 }
 
-@mixin title($fontSize, $fontWeight, $letterSpacing, $align, $textTransf) {
+@mixin title($fontSize, $fontWeight, $letterSpacing, $align, $textTransf, $lineHeight) {
     font-size: $fontSize;
     font-weight: $fontWeight;
     letter-spacing: $letterSpacing;
     text-align: $align;
     text-transform: $textTransf;
+    line-height: $lineHeight;
 }
 
 //scroll animation
