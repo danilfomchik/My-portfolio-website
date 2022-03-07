@@ -243,6 +243,7 @@ body {
 .greeting-block {
   max-width: 1200px;
   margin: 0px auto;
+  padding-bottom: 5rem;
 }
 .greeting-block .greeting-block__wrapper {
   padding: 20px;
@@ -368,7 +369,6 @@ body {
 
 .services-block {
   background-image: url("../pictures/pattern-lines.png");
-  margin-top: 5rem;
 }
 .services-block .services-wrapper {
   z-index: 1;
@@ -569,11 +569,77 @@ body {
   transform: rotate(180deg);
 }
 
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  padding-top: 80px;
+}
+.projects-container .projects__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.projects-container .projects__inner .projects-item {
+  font-size: 20px;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: initial;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff;
+  margin: 30px 15px;
+  flex-basis: 450px;
+}
+.projects-container .projects__inner .projects-item h3 {
+  padding: 15px 0px 0px;
+}
+.projects-container .projects__inner .imgWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.projects-container .projects__inner .imgWrapper .button {
+  position: absolute;
+  border-radius: 4px;
+  padding: 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: calc(50% - 10px);
+  background-color: #75DAB4;
+  visibility: hidden;
+  text-decoration: none;
+}
+.projects-container .projects__inner .imgWrapper img {
+  transition: all 180ms ease-in-out;
+  opacity: 1;
+}
+.projects-container .projects__inner .activeProject img {
+  opacity: 0.5;
+}
+.projects-container .projects__inner .activeProject .button {
+  visibility: visible;
+}
+
 .projects-title__wrapper {
   position: relative;
-  padding: 40px 10px;
+  padding: 80px 10px 40px;
 }
-.projects-title__wrapper .projects-title__main p {
+.projects-title__wrapper .projects-title__main .title-phrase {
+  text-align: left;
+  padding-bottom: 20px;
+  text-transform: none;
+  letter-spacing: 8px;
+}
+.projects-title__wrapper .projects-title__main p:not(.title-phrase) {
   padding-top: 10px;
   color: white;
   font-size: 20px;
@@ -607,6 +673,9 @@ body {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
   color: transparent;
   opacity: 0.3;
+}
+.projects-title__wrapper .bg-title span {
+  padding: 20px 0px 0px;
 }
 
 .page-title {

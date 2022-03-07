@@ -32,6 +32,7 @@ body{
 
 .greeting-block{
   @include container(1200px, 0px auto);
+  padding-bottom: 5rem;
     
   .greeting-block__wrapper{
     padding: 20px;
@@ -162,7 +163,7 @@ body{
 
 .services-block{
   background-image: url('../pictures/pattern-lines.png');
-  margin-top: 5rem;
+  // margin-top: 5rem;
   
   //card-3d flip //card-3d flip //card-3d flip //card-3d flip //card-3d flip //card-3d flip //card-3d flip
   .services-wrapper{
@@ -454,12 +455,79 @@ body{
 
 //services arrow
 
+.projects-container{
+  @include container(1200px, 0 auto 30px);
+  padding-top: 80px;
+
+  .projects__inner{
+    @include flexDisplay(flex, row, space-evenly, center);
+    flex-wrap: wrap;
+
+    .projects-item{
+      @include title(20px, normal, 5px, center, uppercase, initial);
+      font-family: $mainFont2;
+      color: #ffffff;
+      margin: 30px 15px;
+      flex-basis: 450px;
+      // height: 400px;
+
+      h3{
+        padding: 15px 0px 0px;
+      }
+    }
+
+    .imgWrapper{
+      @include flexDisplay(flex, row, center, center);
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: relative;
+      
+      .button{
+        position: absolute;
+        border-radius: $services-itemBR;
+        padding: 15px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: calc(50% - 10px);
+        background-color: $mainColor;
+        visibility: hidden;
+        text-decoration: none;
+        // transition: all 180ms ease-in-out;
+      }
+
+      img{
+        transition: all 180ms ease-in-out;
+        opacity: 1;
+      }
+    }
+
+    .activeProject{
+      img{
+        opacity: .5;
+      }
+
+      .button{
+        visibility: visible;
+      }
+    }
+  }
+}
+
 .projects-title__wrapper{
   position: relative;
-  padding: 40px 10px;
+  padding: 80px 10px 40px;
 
   .projects-title__main{
-    p{
+    .title-phrase{
+      text-align: left;
+      padding-bottom: 20px;
+      text-transform: none;
+      letter-spacing: 8px;
+    }
+
+    p:not(.title-phrase){
       padding-top: 10px;
       color: white;
       font-size: 20px;
@@ -488,6 +556,10 @@ body{
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
     color: transparent;
     opacity: 0.3;
+
+    span{
+      padding: 20px 0px 0px;
+    }
   }
 }
 
