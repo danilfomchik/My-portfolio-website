@@ -198,22 +198,34 @@ body {
   background-color: #0c0f16;
 }
 
-.header-container {
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: #0c0f16ad;
+  width: 100%;
+  z-index: 11000;
+}
+
+.header-block {
+  width: 100%;
+}
+.header-block .header-container {
   padding: 0px 10px;
   max-width: 1200px;
-  margin: 15px auto 0px;
+  margin: 10px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-.header-container a {
+.header-block .header-container a {
   text-decoration: none;
   color: white;
   position: relative;
   line-height: 1;
 }
-.header-container a::after {
+.header-block .header-container a::after {
   display: block;
   position: absolute;
   left: 0;
@@ -223,16 +235,16 @@ body {
   content: "";
   transition: width 0.3s ease-out;
 }
-.header-container a:hover {
+.header-block .header-container a:hover {
   color: #75DAB4;
 }
-.header-container a:hover::after {
+.header-block .header-container a:hover::after {
   width: 100%;
 }
-.header-container .menu-list {
+.header-block .header-container .menu-list {
   display: flex;
 }
-.header-container .menu-list li {
+.header-block .header-container .menu-list li {
   padding: 0px 15px;
 }
 
@@ -249,6 +261,7 @@ body {
   padding: 20px;
 }
 .greeting-block .greeting-block__container {
+  margin-top: 70px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -582,7 +595,7 @@ body {
   flex-wrap: wrap;
 }
 .projects-container .projects__inner .projects-item {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: normal;
   letter-spacing: 5px;
   text-align: center;
@@ -591,7 +604,8 @@ body {
   font-family: "Barlow Condensed", sans-serif;
   color: #ffffff;
   margin: 30px 15px;
-  flex-basis: 450px;
+  flex-basis: 370px;
+  transition: all 180ms ease-in-out;
 }
 .projects-container .projects__inner .projects-item h3 {
   padding: 15px 0px 0px;
@@ -605,8 +619,9 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   position: relative;
+  transition: all 180ms ease-in-out;
 }
-.projects-container .projects__inner .imgWrapper .button {
+.projects-container .projects__inner .imgWrapper .projectButton {
   position: absolute;
   border-radius: 4px;
   padding: 15px;
@@ -615,8 +630,9 @@ body {
   font-weight: bold;
   width: calc(50% - 10px);
   background-color: #75DAB4;
-  visibility: hidden;
+  opacity: 0;
   text-decoration: none;
+  transition: all 180ms ease-in-out;
 }
 .projects-container .projects__inner .imgWrapper img {
   transition: all 180ms ease-in-out;
@@ -625,8 +641,8 @@ body {
 .projects-container .projects__inner .activeProject img {
   opacity: 0.5;
 }
-.projects-container .projects__inner .activeProject .button {
-  visibility: visible;
+.projects-container .projects__inner .activeProject .projectButton {
+  opacity: 1;
 }
 
 .projects-title__wrapper {
@@ -676,6 +692,66 @@ body {
 }
 .projects-title__wrapper .bg-title span {
   padding: 20px 0px 0px;
+}
+
+.video__wrapper {
+  background-color: black;
+  background-image: url("../pictures/background2.png");
+  width: 495px;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.video__wrapper video {
+  width: 60%;
+}
+
+.tools-block {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tools-block .tools-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px 0px 30px;
+}
+.tools-block .tools-container .tools-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  flex-wrap: wrap;
+}
+.tools-block .tools-container .tools-wrapper .tool {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 200px;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 10px;
+  color: white;
+  transition: all 250ms ease-in;
+}
+.tools-block .tools-container .tools-wrapper .tool .tool-title {
+  margin: 25px 0px 15px;
+  color: #75DAB4;
+}
+.tools-block .tools-container .tools-wrapper .tool img {
+  width: 50%;
+}
+
+#tools-block {
+  background-image: url(../pictures/background2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .page-title {

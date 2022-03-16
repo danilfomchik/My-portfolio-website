@@ -79,8 +79,8 @@ window.addEventListener('DOMContentLoaded', () => {
     
     const imgWrapper = document.querySelectorAll('.imgWrapper');
 
-    function projectHover(imgsWrapper, action) {
-        imgsWrapper.forEach(wrapper => {
+    function projectHover(imgWrapper, action) {
+        imgWrapper.forEach(wrapper => {
             wrapper.addEventListener(action, () => {
                 wrapper.classList.toggle('activeProject');
             });

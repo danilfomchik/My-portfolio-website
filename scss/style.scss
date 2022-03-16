@@ -10,18 +10,31 @@ body{
     background-color: $BGColor2;
 }
 
-.header-container{
-  padding: 0px 10px;
+header{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  background-color: #0c0f16ad;
+  width: 100%;
+  z-index: 11000;
+}
 
-  @include container(1200px, 15px auto 0px);
-  @include flexDisplay(flex, row, space-between, center);
-  @include link(white, $mainColor);
+.header-block{
+  width: 100%;
 
-  .menu-list{
-    display: flex;
+  .header-container{
+    padding: 0px 10px;
 
-    li{
-      padding: 0px 15px;
+    @include container(1200px, 10px auto);
+    @include flexDisplay(flex, row, space-between, center);
+    @include link(white, $mainColor);
+
+    .menu-list{
+      display: flex;
+
+      li{
+        padding: 0px 15px;
+      }
     }
   }
 }
@@ -39,6 +52,7 @@ body{
   }
 
   .greeting-block__container{
+    margin-top: 70px;
     position: relative;
     @include flexDisplay(flex, row, space-between, center);
 
@@ -464,12 +478,13 @@ body{
     flex-wrap: wrap;
 
     .projects-item{
-      @include title(20px, normal, 5px, center, uppercase, initial);
+      @include title(15px, normal, 5px, center, uppercase, initial);
       font-family: $mainFont2;
       color: #ffffff;
       margin: 30px 15px;
-      flex-basis: 450px;
+      flex-basis: 370px;
       // height: 400px;
+      transition: all 180ms ease-in-out;
 
       h3{
         padding: 15px 0px 0px;
@@ -482,8 +497,9 @@ body{
       width: 100%;
       background-color: rgba(0, 0, 0, 0.5);
       position: relative;
-      
-      .button{
+      transition: all 180ms ease-in-out;
+
+      .projectButton{
         position: absolute;
         border-radius: $services-itemBR;
         padding: 15px;
@@ -492,9 +508,10 @@ body{
         font-weight: bold;
         width: calc(50% - 10px);
         background-color: $mainColor;
-        visibility: hidden;
+        // visibility: hidden;
+        opacity: 0;
         text-decoration: none;
-        // transition: all 180ms ease-in-out;
+        transition: all 180ms ease-in-out;
       }
 
       img{
@@ -508,8 +525,8 @@ body{
         opacity: .5;
       }
 
-      .button{
-        visibility: visible;
+      .projectButton{
+        opacity: 1;
       }
     }
   }
@@ -563,9 +580,66 @@ body{
   }
 }
 
+.video__wrapper{
+  background-color: black;
+  background-image: url("../pictures/background2.png");
+  width: 495px;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  video{
+    width: 60%;
+  }
+}
+
+.tools-block{
+  @include container(1200px, 0 auto);
+
+  .tools-container{
+    @include flexDisplay(flex, row, space-evenly, center);
+    flex-wrap: wrap;
+
+    margin: 0px 0px 30px;
+
+    .tools-wrapper{
+      @include flexDisplay(flex, row, center, center);
+      width: 80%;
+      flex-wrap: wrap;
+
+      .tool{
+        @include flexDisplay(flex, column, center, center);
+        flex-basis: 200px;
+        text-align: center;
+        margin: 20px 10px;
+        padding: 10px;
+        color: white;
+
+        transition: all 250ms ease-in;
+  
+        .tool-title{
+          margin: 25px 0px 15px;
+          color: $mainColor;
+        }
+  
+        img{
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+#tools-block{
+  background-image: url(../pictures/background2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 .page-title{
-  max-width: 1200px;
-  margin: 0 auto;
+  @include container(1200px, 0 auto);
 
   .title-phrase{
     @include title(12px, 300, 14px, center, uppercase, 1.5);
