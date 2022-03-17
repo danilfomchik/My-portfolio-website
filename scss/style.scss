@@ -279,7 +279,7 @@ header{
 
     @include transform-style;
     @include backface-visibility;
-    @include glassMorph(rgb(113 176 227 / 35%), 1px);
+    @include glassMorph(rgba(255, 255, 255, 0.2), 1px);
 
     .card-3d__title{
       @include flexDisplay(flex, row, center, center);
@@ -535,48 +535,50 @@ header{
 .projects-title__wrapper{
   position: relative;
   padding: 80px 10px 40px;
+  margin: 0 auto !important;
+  padding: 80px 10px 40px !important;
+}
 
-  .projects-title__main{
-    .title-phrase{
-      text-align: left;
-      padding-bottom: 20px;
-      text-transform: none;
-      letter-spacing: 8px;
-    }
-
-    p:not(.title-phrase){
-      padding-top: 10px;
-      color: white;
-      font-size: 20px;
-    }
-
-    h2{
-      color: white;
-      font-size: 80px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      line-height: 90px;
-      font-family: $mainFont2;
-    }
+.projects-title__main, .footer-title{
+  .title-phrase{
+    text-align: left;
+    padding-bottom: 20px;
+    text-transform: none;
+    letter-spacing: 8px;
   }
 
-  .bg-title{
-    @include title(calcFluidFontSize(80, 120, 480, 1200), bold, 30px, center, uppercase, initial);
-    @include flexDisplay(flex, row, center, center);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-family: $mainFont;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
-    color: transparent;
-    opacity: 0.3;
+  p:not(.title-phrase){
+    padding-top: 10px;
+    color: white;
+    font-size: 20px;
+  }
 
-    span{
-      padding: 20px 0px 0px;
-    }
+  h2{
+    color: white;
+    font-size: 80px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 90px;
+    font-family: $mainFont2;
+  }
+}
+
+.bg-title{
+  @include title(calcFluidFontSize(80, 120, 480, 1200), bold, 30px, center, uppercase, initial);
+  @include flexDisplay(flex, row, center, center);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: $mainFont;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  opacity: 0.3;
+
+  span{
+    padding: 20px 0px 0px;
   }
 }
 
@@ -638,8 +640,42 @@ header{
   background-position: center;
 }
 
+.footer-container{
+  @include container(1200px, 0 auto);
+
+
+  .footer-title__inner{
+    @include flexDisplay(flex, column, space-around, flex-start);
+    padding: 0px 70px 0px;
+
+    h2{
+      font-size: 60px;
+    }
+
+    a{
+      pointer-events: all;
+      z-index: 10;
+      color: white;
+      -webkit-text-stroke: 2px rgb(255 255 255);
+      color: #ffffff00;
+      opacity: 1;
+      font-size: 60px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 250ms ease-in;
+
+      &:hover{
+        color: white !important;
+      }
+    }
+  }
+}
+
 .page-title{
   @include container(1200px, 0 auto);
+  position: relative;
+  padding: 0px 20px;
+  margin: 20px 0px 0px;
 
   .title-phrase{
     @include title(12px, 300, 14px, center, uppercase, 1.5);
