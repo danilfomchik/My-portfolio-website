@@ -10,6 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const arrow = document.querySelector('.fa-play');
     const body = document.querySelector('body');
 
+    const burgerMenu = document.querySelector('.menu-btn');
+
     // find and deactivate elem
     const getActiveItem = (className) => document.querySelector(className);
     const deactivateActiveItem = (activeClass) => {
@@ -89,4 +91,11 @@ window.addEventListener('DOMContentLoaded', () => {
     
     projectHover(imgWrapper, 'mouseover');
     projectHover(imgWrapper, 'mouseout');
+
+    //burger menu
+    burgerMenu.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        this.classList.toggle('menu-btn_active');
+    });
 });
