@@ -4,6 +4,7 @@ const browserSync = require('browser-sync').create();
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const concat = require('gulp-concat');
+const gsap = require('gsap/dist/gsap.js');
 
 function style() {
     return gulp.src('./scss/**/*.scss').pipe(sass()).pipe(gulp.dest('./css')).pipe(browserSync.stream());

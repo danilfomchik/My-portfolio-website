@@ -219,7 +219,6 @@ header{
         line-height: 44px;
         border-radius: $services-itemBR;
         padding: 0px 20px;
-        cursor: pointer;
         color: white;
         text-transform: uppercase;
         font-weight: bold;
@@ -230,6 +229,11 @@ header{
         margin: 0px 5px;
         pointer-events: all;
         z-index: 1000;
+
+        a{
+          display: block;
+          width: 100%;
+        }
       }
       
       .active{
@@ -827,7 +831,7 @@ header{
 }
 
 ::-webkit-scrollbar-track{
-  border-radius: 100vh;
+  // border-radius: 100vh;
   background: #1f2937;
 }
 
@@ -840,26 +844,51 @@ header{
 
 
 // //cursor
-// #cursor, #aura{
-//   position: absolute;
-//   border-radius: 100%;
-//   transition: .5s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
-//   user-select: none;
-//   pointer-events: none;
-//   z-index: 9999;
-// }
+*{
+  cursor: none;
+}
 
-// #cursor{
-//   width: 8px;
-//   height: 8px;
-//   background-color: rgba(#fff, .5);
-// }
+#cursor, #aura{
+  position: fixed;
+  border-radius: 100%;
+  transition: .5s cubic-bezier(.75, -1.27, .3, 2.33) transform, .2s cubic-bezier(.75, -1.27, .3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  z-index: 12000;
+  // mix-blend-mode: darken;
+}
 
-// #aura{
-//   width: 46px;
-//   height: 46px;
-//   border: 1px solid rgba(#fff, .2);
-//   background-color: rgba(#fff, .27);
-//   transform: translate(5px, 5px);
-// }
+#cursor{
+  width: 8px;
+  height: 8px;
+  // background-color: rgba(#fff, .9);
+  background-color: $hoverColor;
+  transform: scale(1);
 
+  &.activeCursor{
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+#aura{
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(#fff, .2);
+  background-color: rgba(#fff, .027);
+  transform: translate(5px, 5px);
+
+  mix-blend-mode: difference;
+  // transform: scale(0);
+
+  &.activeCursor{
+    border: 1px solid rgba(#fff, .5);
+    background-color: rgba(#fff, .033);
+    transform: scale(1.5);
+  }
+}
+
+#cursor.hidden,
+#aura.hidden{
+  transform: scale(.001);
+}

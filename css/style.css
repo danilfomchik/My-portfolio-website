@@ -760,7 +760,6 @@ header {
   line-height: 44px;
   border-radius: 4px;
   padding: 0px 20px;
-  cursor: pointer;
   color: white;
   text-transform: uppercase;
   font-weight: bold;
@@ -771,6 +770,10 @@ header {
   margin: 0px 5px;
   pointer-events: all;
   z-index: 1000;
+}
+.services-block .services-container .services__choose-block .services__check-item a {
+  display: block;
+  width: 100%;
 }
 .services-block .services-container .services__choose-block .active {
   background-color: #75DAB4;
@@ -1295,11 +1298,53 @@ header {
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 100vh;
   background: #1f2937;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #ffffff;
   border-radius: 100vh;
+}
+
+* {
+  cursor: none;
+}
+
+#cursor, #aura {
+  position: fixed;
+  border-radius: 100%;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform, 0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  z-index: 12000;
+}
+
+#cursor {
+  width: 8px;
+  height: 8px;
+  background-color: #39e4a2;
+  transform: scale(1);
+}
+#cursor.activeCursor {
+  opacity: 0;
+  transform: scale(0);
+}
+
+#aura {
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.027);
+  transform: translate(5px, 5px);
+  mix-blend-mode: difference;
+}
+#aura.activeCursor {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.033);
+  transform: scale(1.5);
+}
+
+#cursor.hidden,
+#aura.hidden {
+  transform: scale(0.001);
 }

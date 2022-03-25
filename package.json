@@ -18,11 +18,13 @@
   "homepage": "https://github.com/danilfomchik/My-portfolio-website#readme",
   "devDependencies": {
     "browser-sync": "^2.27.7",
+    "gsap": "^3.9.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^5.1.0",
     "sass": "^1.49.8",
     "webpack": "^5.69.1",
     "webpack-stream": "^7.0.0"
-  }
+  },
+  "dependencies": {}
 }
