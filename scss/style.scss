@@ -820,6 +820,25 @@ header{
 }
 //burger
 
+
+// scroll
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-track{
+  border-radius: 100vh;
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #ffffff;
+  border-radius: 100vh;
+}
+// scroll
+
+
+
 // //cursor
 // #cursor, #aura{
 //   position: absolute;
