@@ -36,6 +36,17 @@ header{
     .menu-list{
       display: flex;
 
+      .activeMenuItem{
+        color: $mainColor;
+
+        &::after{
+          background-color: $mainColor;
+          content: "";
+          transition: width 0.3s ease-out;
+          width: 100%;
+        }
+      }
+
       li{
         padding: 0px 15px;
       }
@@ -680,7 +691,7 @@ header{
   }
 }
 
-#tools-block{
+#tools-section{
   background-image: url(../pictures/background2.png);
   background-repeat: no-repeat;
   background-size: cover;
