@@ -706,7 +706,8 @@ header{
       -webkit-text-stroke: 2px rgb(255 255 255);
       color: #ffffff00;
       opacity: 1;
-      font-size: 60px;
+      // font-size: 60px;
+      font-size: 5vw;
       text-decoration: none;
       text-transform: uppercase;
       transition: all 250ms ease-in;
@@ -864,6 +865,8 @@ header{
   // background-color: rgba(#fff, .9);
   background-color: $hoverColor;
   transform: scale(1);
+  
+  // mix-blend-mode: difference;
 
   &.activeCursor{
     opacity: 0;
@@ -878,8 +881,7 @@ header{
   background-color: rgba(#fff, .027);
   transform: translate(5px, 5px);
 
-  mix-blend-mode: difference;
-  // transform: scale(0);
+  // mix-blend-mode: difference;
 
   &.activeCursor{
     border: 1px solid rgba(#fff, .5);
@@ -892,3 +894,56 @@ header{
 #aura.hidden{
   transform: scale(.001);
 }
+
+//scroll up
+.scroll-up__wrapper{
+  display: block;
+}
+
+.scroll-up{
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 10000;
+  width: 50px;
+  height: 50px;
+  color: #dcdcdc;
+  visibility: hidden;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 4px #dcdcdc;
+  opacity: 0;
+  transition: .2s;
+  transform: translateX(25px);
+
+  &::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    @include flexDisplay(flex, row, center, center);
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    // content: '🠕';
+
+    content: '🚀';
+  }
+
+  // &:hover{
+  //   color: $scroll-up__Color;
+  // }
+
+  .scroll-up__svg-path{
+    box-sizing: border-box;
+    fill: none;
+    stroke: $scroll-up__Color;
+    stroke-width: 5px;
+    transition: .2s;
+  }
+}
+
+.scroll-up--active{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+//scroll up

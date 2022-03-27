@@ -3,10 +3,6 @@
     font-size: 40px !important;
     line-height: 65px !important;
   }
-
-  .footer-container .footer-title__inner a {
-    font-size: 50px !important;
-  }
 }
 @media (max-width: 991px) {
   .greeting-block .greeting-block__container .main-info .salutation {
@@ -64,10 +60,6 @@
     line-height: 60px !important;
   }
 
-  .footer-container .footer-title__inner a {
-    font-size: 45px !important;
-  }
-
   .projects-container .projects__inner .projects-item {
     flex-basis: 420px !important;
   }
@@ -92,10 +84,6 @@
 
   .footer-container .footer-title__inner a {
     -webkit-text-stroke: 1px white !important;
-  }
-
-  .footer-container .footer-title__inner a {
-    font-size: 38px !important;
   }
 
   .footer-container .footer-title__inner h2 {
@@ -204,10 +192,6 @@
     line-height: 45px !important;
   }
 
-  .footer-container .footer-title__inner a {
-    font-size: 30px !important;
-  }
-
   .video__wrapper {
     width: 430px !important;
     height: 240px !important;
@@ -290,10 +274,6 @@
     left: -10px !important;
   }
 
-  .footer-container .footer-title__inner a {
-    font-size: 19px !important;
-  }
-
   .greeting-block .greeting-block__social {
     flex-direction: column !important;
     justify-content: center !important;
@@ -341,5 +321,14 @@
   .tools-block .tools-container .tools-wrapper .tool {
     flex-basis: 85px !important;
     margin: 10px 0px !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #cursor, #aura {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
   }
 }

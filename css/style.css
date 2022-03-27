@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
 @keyframes colorSlide {
@@ -198,10 +199,6 @@
     font-size: 40px !important;
     line-height: 65px !important;
   }
-
-  .footer-container .footer-title__inner a {
-    font-size: 50px !important;
-  }
 }
 @media (max-width: 991px) {
   .greeting-block .greeting-block__container .main-info .salutation {
@@ -259,10 +256,6 @@
     line-height: 60px !important;
   }
 
-  .footer-container .footer-title__inner a {
-    font-size: 45px !important;
-  }
-
   .projects-container .projects__inner .projects-item {
     flex-basis: 420px !important;
   }
@@ -287,10 +280,6 @@
 
   .footer-container .footer-title__inner a {
     -webkit-text-stroke: 1px white !important;
-  }
-
-  .footer-container .footer-title__inner a {
-    font-size: 38px !important;
   }
 
   .footer-container .footer-title__inner h2 {
@@ -399,10 +388,6 @@
     line-height: 45px !important;
   }
 
-  .footer-container .footer-title__inner a {
-    font-size: 30px !important;
-  }
-
   .video__wrapper {
     width: 430px !important;
     height: 240px !important;
@@ -485,10 +470,6 @@
     left: -10px !important;
   }
 
-  .footer-container .footer-title__inner a {
-    font-size: 19px !important;
-  }
-
   .greeting-block .greeting-block__social {
     flex-direction: column !important;
     justify-content: center !important;
@@ -536,6 +517,15 @@
   .tools-block .tools-container .tools-wrapper .tool {
     flex-basis: 85px !important;
     margin: 10px 0px !important;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #cursor, #aura {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
   }
 }
 body {
@@ -1159,7 +1149,7 @@ header {
   -webkit-text-stroke: 2px white;
   color: #ffffff00;
   opacity: 1;
-  font-size: 60px;
+  font-size: 5vw;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 250ms ease-in;
@@ -1336,7 +1326,6 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.027);
   transform: translate(5px, 5px);
-  mix-blend-mode: difference;
 }
 #aura.activeCursor {
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -1347,4 +1336,50 @@ header {
 #cursor.hidden,
 #aura.hidden {
   transform: scale(0.001);
+}
+
+.scroll-up__wrapper {
+  display: block;
+}
+
+.scroll-up {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 10000;
+  width: 50px;
+  height: 50px;
+  color: #dcdcdc;
+  visibility: hidden;
+  border-radius: 50px;
+  box-shadow: inset 0 0 0 4px #dcdcdc;
+  opacity: 0;
+  transition: 0.2s;
+  transform: translateX(25px);
+}
+.scroll-up::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  content: "🚀";
+}
+.scroll-up .scroll-up__svg-path {
+  box-sizing: border-box;
+  fill: none;
+  stroke: #08524a;
+  stroke-width: 5px;
+  transition: 0.2s;
+}
+
+.scroll-up--active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
 }
