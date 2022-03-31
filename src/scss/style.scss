@@ -1,10 +1,367 @@
-@import 'mixins';
-@import 'variables';
-@import 'keyframes';
-@import 'functions';
-@import 'media';
 @import url(https://fonts.googleapis.com/css?family=Cabin);
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+// reset --------------------------------------------------------------------------------------------------------- reset
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+// reset --------------------------------------------------------------------------------------------------------- reset
+
+
+// variables --------------------------------------------------------------------------------------------------------- variables
+$mainColor: #75DAB4;
+$hoverColor: #39e4a2;
+
+$darkColor: #022d28;
+
+
+$scroll-up__Color: #08524a;
+
+$mainFont: "Poppins", sans-serif;
+$mainFont2: "Barlow Condensed", sans-serif;
+
+//lighter
+$BGColor1: #11141b;
+
+//darken
+$BGColor2: #0c0f16;
+
+//background
+$background1: '@img/background2.png';
+
+//scroll animation
+$colorBg: #222a30;
+$colorOutline: #ffffff;
+$colorOutlineFade: #4e5559;
+
+$widthMouse: 41px;
+$heightMouse: 76px;
+$borderMouse: 6px;
+
+$posMouse: 8px;
+$posText: 2px;
+
+$sizeTrackball: 10px;
+$posTrackball: 20px;
+$shrinkTrackball: 0.4;
+
+$animDuration: 5s;
+
+//dorder-radius
+$servicesBR: 6px;
+$services-itemBR: 4px;
+// variables --------------------------------------------------------------------------------------------------------- variables
+
+// functions --------------------------------------------------------------------------------------------------------- functions
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+    $k: calc(($f-max - $f-min) / ($v-max - $v-min));
+    $b: $f-min - $k * $v-min;
+  
+    $b: $b * 1px;
+  
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+// functions --------------------------------------------------------------------------------------------------------- functions
+
+
+// keyframes --------------------------------------------------------------------------------------------------------- keyframes
+//scroll animation 
+@keyframes colorSlide { 
+    0% { background-position: 0% 100%; }
+    20% { background-position: 0% 0%; }
+    21% { background-color: $colorOutlineFade; }
+    29.99% { 
+      background-color: $colorOutline;
+      background-position: 0% 0%;
+    }
+    30% { 
+      background-color: $colorOutlineFade;
+      background-position: 0% 100%;
+    }
+    50% { background-position: 0% 0%; }
+    51% { background-color: $colorOutlineFade; }
+    59% { 
+      background-color: $colorOutline;
+      background-position: 0% 0%;
+    }
+    60% { 
+      background-color: $colorOutlineFade;
+      background-position: 0% 100%;
+    }
+    80% { background-position: 0% 0%; }
+    81% { background-color: $colorOutlineFade; }
+    90%, 100% { background-color: $colorOutline; }
+  }
+  
+  @keyframes trackBallSlide {
+    0% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    6% { 
+      opacity: 1;
+      transform: scale(0.9) translateY(calc($posTrackball / 4));
+    }
+    14% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY($posTrackball*2);
+    }
+    15%, 19% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY(-$posTrackball);
+    }
+    28%, 29.99% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    36% { 
+      opacity: 1;
+      transform: scale(0.9) translateY(calc($posTrackball / 4));
+    }
+    44% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY($posTrackball*2);
+    }
+    45%, 49% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY(-$posTrackball);
+    }
+    58%, 59.99% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    60% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+    66% { 
+      opacity: 1;
+      transform: scale(0.9) translateY(calc($posTrackball / 4));
+    }
+    74% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY($posTrackball*2);
+    }
+    75%, 79% {
+      opacity: 0;
+      transform: scale($shrinkTrackball) translateY(-$posTrackball);
+    }
+    88%, 100% {
+      opacity: 1;
+      transform: scale(1) translateY(-$posTrackball);
+    }
+  }
+  
+  @keyframes nudgeMouse {
+    0% { transform: translateY(0); }
+    20% { transform: translateY($posMouse); }
+    30% { transform: translateY(0); }
+    50% { transform: translateY($posMouse); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY($posMouse); }
+    90% { transform: translateY(0); }
+  }
+  
+  @keyframes nudgeText {
+    0% { transform: translateY(0); }
+    20% { transform: translateY($posText); }
+    30% { transform: translateY(0); }
+    50% { transform: translateY($posText); }
+    60% { transform: translateY(0); }
+    80% { transform: translateY($posText); }
+    90% { transform: translateY(0); }
+  }
+  
+@keyframes colorText { 
+    21% { color: $colorOutlineFade; }
+    30% { color: $colorOutline; }
+    51% { color: $colorOutlineFade; }
+    60% { color: $colorOutline; }
+    81% { color: $colorOutlineFade; }
+    90% { color: $colorOutline; }
+}
+//scroll animation
+
+@keyframes border-transform{
+    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
+    14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
+    28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
+    42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
+    56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
+    70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
+    84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+}
+// keyframes --------------------------------------------------------------------------------------------------------- keyframes
+
+
+
+// mixins --------------------------------------------------------------------------------------------------------- mixins
+@mixin container($maxW, $margin...) {
+    max-width: $maxW;
+    margin: $margin;
+}
+
+@mixin flexDisplay($display, $direction, $jusContent, $alignItems){
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $jusContent;
+    align-items: $alignItems;
+}
+
+@mixin link($link, $hover){
+    a{
+        text-decoration: none;
+        color: $link;
+        position: relative;
+        line-height: 1;
+
+        &::after{
+            display: block;
+	        position: absolute;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $hover;
+            content: "";
+            transition: width 0.3s ease-out;
+        }
+
+        &:hover{
+            color: $hover;
+
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+@mixin glassMorph($background, $blur) {
+    border-radius: $servicesBR;
+    background: $background;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur($blur);
+}
+
+@mixin title($fontSize, $fontWeight, $letterSpacing, $align, $textTransf, $lineHeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    letter-spacing: $letterSpacing;
+    text-align: $align;
+    text-transform: $textTransf;
+    line-height: $lineHeight;
+}
+
+//scroll animation
+@mixin bgGradient {
+    background:
+      $colorOutlineFade
+      linear-gradient(
+        transparent 0%,
+        transparent 50%,
+        $colorOutline 50%,
+        $colorOutline 100%
+      );
+}
+
+@mixin transform-style {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@mixin backface-visibility {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+@mixin card-3d__img-position($zIndex) {
+    display: block;
+    position: absolute;
+    z-index: $zIndex;
+}
+// mixins --------------------------------------------------------------------------------------------------------- mixins
 
 body{
     font-family: $mainFont;
@@ -197,7 +554,7 @@ header{
 //////////
 
 .services-block{
-  background-image: url('../pictures/pattern-lines.png');
+  background-image: url('@img/pattern-lines.png');
   // margin-top: 5rem;
 
   .services-title{
@@ -642,7 +999,7 @@ header{
 
 .video__wrapper{
   background-color: black;
-  background-image: url("../pictures/background2.png");
+  background-image: url("@img/background2.png");
   width: 495px;
   height: 270px;
   display: flex;
@@ -692,7 +1049,7 @@ header{
 }
 
 #tools-section{
-  background-image: url(../pictures/background2.png);
+  background-image: url(@img/background2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -958,3 +1315,380 @@ header{
   transform: translateX(0);
 }
 //scroll up
+
+
+
+
+
+// media queries --------------------------------------------------------------------------------------------------------- media queries
+@media (max-width: 1199px) { 
+    .footer-container .footer-title__inner h2 {
+        font-size: 40px !important;
+        line-height: 65px !important;
+    }
+
+    // .footer-container .footer-title__inner a{
+    //     font-size: 50px !important;
+    // }
+}
+
+@media (max-width: 991px){
+    .greeting-block .greeting-block__container .main-info .salutation {
+        font-size: 22px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .salutation .myNameis {
+        font-size: 35px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .salutation .name{
+        font-size: 40px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .speciality{
+        font-size: 25px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .speciality{
+        letter-spacing: 3px !important;
+    }
+
+    .services-block .services-container .card-3d-wrapper {
+        width: 580px !important;
+        height: 445px !important;
+    }
+
+    .services-block .pricing-wrap .img-1{
+        right: -45px !important;
+    }
+
+    .services-block .pricing-wrap .img-4{
+        left: -45px !important;
+    }
+
+    .projects-title__main h2{
+        font-size: 60px !important;
+        line-height: 70px !important;
+    }
+
+    .bg-title{
+        font-size: 80px !important;
+    }
+
+    .projects-title__main p:not(.title-phrase){
+        font-size: 18px !important;
+    }
+
+    .tools-block .tools-container .tools-wrapper .tool {
+        flex-basis: 125px !important;
+    }
+
+    .footer-container .footer-title__inner h2 {
+        font-size: 35px !important;
+        line-height: 60px !important;
+    }
+
+    // .footer-container .footer-title__inner a{
+    //     font-size: 45px !important;
+    // }
+
+    .projects-container .projects__inner .projects-item{
+        flex-basis: 420px !important;
+    }
+
+    .services-block .pricing-wrap .img-1, 
+    .services-block .pricing-wrap .img-4{
+        width: calc(20% + 160px) !important;
+    }
+}
+
+@media (max-width: 768px){
+    .header-block .header-container {
+        padding: 0px 30px !important;
+    }
+
+    .main-menu{
+        display: none !important;
+    }
+
+    .menu-btn {
+        display: block !important;
+    }
+
+    .footer-container .footer-title__inner a {
+        -webkit-text-stroke: 1px white !important;
+    }
+
+    // .footer-container .footer-title__inner a {
+    //     font-size: 38px !important;
+    // }
+
+    .footer-container .footer-title__inner h2 {
+        font-size: 30px !important;
+        line-height: 55px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info{
+        top: 35px !important; 
+    }
+
+    .services-block .services-container .card-3d-wrapper {
+        width: 550px !important;
+        height: 420px !important;
+    }
+
+    .projects-title__main h2 {
+        font-size: 50px !important;
+        line-height: 60px !important;
+    }
+
+    .projects-title__main p:not(.title-phrase) {
+        font-size: 16px !important;
+    }
+
+    .bg-title {
+        font-size: 65px !important;
+    }
+
+    .page-title .title-phrase {
+        font-size: 10px !important;
+    }
+
+    .scroll-animation {
+        width: 36px !important;
+        height: 71px !important;
+    }
+
+    .scroll-animation:before {
+        width: 30px !important;
+        height: 65px !important;
+    }
+
+    .tools-block .tools-container .tools-wrapper .tool {
+        flex-basis: 110px !important;
+    }
+
+    .footer-container .footer-title__inner {
+        align-items: center !important; 
+        padding: 0px 0px 0px !important;
+    }
+}
+
+@media (max-width: 675px){
+    .greeting-block .greeting-block__container .main-info,
+    .greeting-block .greeting-block__container .avatar-container{
+        width: 50% !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info{
+        left: 45px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .salutation {
+        font-size: 18px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .salutation .myNameis {
+        font-size: 30px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .salutation .name {
+        font-size: 35px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info .speciality {
+        font-size: 20px !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info{
+        padding: 10px 20px !important;
+    }
+
+    .greeting-block .greeting-block__social .social-list .social-list_li .menu-item i{
+        font-size: 12px !important;
+    }
+
+    .greeting-block .greeting-block__social .greeting-block__divider{
+        height: 0.1px !important;
+    }
+
+    .services-block .services-container .card-3d-wrapper {
+        width: 490px !important;
+        height: 390px !important;
+    }
+
+    // .services-block .pricing-wrap .img-wrap img {
+    //     width: 90% !important;
+    // }
+
+    .services-block .pricing-wrap .img-1 {
+        right: -25px !important;
+    }
+
+    .services-block .pricing-wrap .img-4 {
+        left: -25px !important;
+    }
+
+    .footer-container .footer-title__inner h2 {
+        font-size: 25px !important;
+        line-height: 45px !important;
+    }
+
+    // .footer-container .footer-title__inner a {
+    //     font-size: 30px !important;
+    // }
+
+    .video__wrapper {
+        width: 430px !important;
+        height: 240px !important;
+
+        video{
+            width: 50% !important;
+        }
+    }
+
+    .page-title .title{
+        font-size: 55px !important;
+    }
+
+    .bg-title{
+        display: none !important;
+    }
+
+    .greeting-block .greeting-block__wrapper {
+        padding: 20px 20px 55px !important;
+    }
+}
+
+@media (max-width: 575px){
+    .services-block .pricing-wrap .img-1,
+    .services-block .pricing-wrap .img-4 {
+        width: calc(20% + 130px) !important;
+    }
+
+    .services-block .services-container .card-3d-wrapper {
+        width: 430px !important;
+        height: 390px !important;
+    }
+
+    .services-block .services-container .services__choose-block{
+        justify-content: center !important;
+
+        .services__check-item{
+            width: calc(40% - 10px) !important;
+        }
+    }
+
+    .greeting-block__container{
+        flex-direction: column-reverse !important;
+    }
+
+    .greeting-block .greeting-block__container .main-info{
+        width: 100% !important;
+        top: -3px !important;
+        left: 0px !important;
+    }
+
+    .greeting-block .greeting-block__container .avatar-container{
+        width: 80% !important;
+    }
+
+    .services-block .services-container .services__choose-block{
+        width: 300px !important;
+    }
+
+    .services-block .services-container .services__choose-block .services__check-item{
+        font-size: 14px !important;
+    }
+
+    .services-block .services-container .card-3d-wrapper {
+        width: 275px !important;
+        height: 355px !important;
+    }
+
+    .card-3d__title{
+        display: none !important;
+    }
+
+    .services-block .pricing-wrap .img-1,
+    .services-block .pricing-wrap .img-4 {
+        width: calc(10% + 130px) !important;
+    }
+
+    .services-block .pricing-wrap .img-1 {
+        right: -10px !important;
+    }
+
+    .services-block .pricing-wrap .img-4 {
+        left: -10px !important;
+    }
+
+    // .footer-container .footer-title__inner a {
+    //     font-size: 19px !important;
+    // }
+
+    .greeting-block .greeting-block__social{
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .greeting-block__divider{
+        margin: 0px 0px 10px !important;
+    }
+
+    .page-title .title-phrase {
+        font-size: 8px !important;
+    }
+
+    .page-title .title {
+        font-size: 45px !important;
+    }
+
+    .back-title{
+        font-size: 55px !important;
+    }
+
+    .projects-title__main h2 {
+        font-size: 30px !important;
+        line-height: 45px !important;
+    }
+
+    .projects-title__wrapper {
+        padding: 80px 25px 40px !important;
+    }
+
+    .projects-title__main p:not(.title-phrase) {
+        font-size: 12px !important;
+    }
+
+    .scroll-animation{
+        width: 30px !important;
+        height: 65px !important;
+        font-size: 15px;
+
+        &:before {
+            width: 24px !important;
+            height: 59px !important;
+        }
+    }
+
+    .tools-block .tools-container .tools-wrapper .tool {
+        flex-basis: 85px !important;
+        margin: 10px 0px !important;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .menu-item, .menu-item i{
+        cursor: pointer !important;
+    }
+
+    #cursor, #aura{
+        display: none;
+    }
+
+    *{
+        cursor: auto !important;
+    }
+}
+// media queries --------------------------------------------------------------------------------------------------------- media queries

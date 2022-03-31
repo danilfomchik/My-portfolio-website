@@ -1,46 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/x-icon" href="./pictures/logo.png">
-    <title>Fomenko Daniil | Front-End developer</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Poppins&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/reset.css">
-</head>
+@@include('html/head.html', {
+    "title": "Главная"
+})
 <body>
-
     <div id="cursor"></div>
     <div id="aura"></div>
-    <!-- class="activeCursor" -->
-    <header>
-        <div class="header-block">
-            <div class="header-container">
-                <div class="logo">
-                    <img src="./pictures/logo.png" alt="logo">
-                </div>
-                <nav class="main-menu">
-                    <ul class="menu-list">
-                        <li class="menu-item-li"><a href="#about-section" class="menu-item menu-list__item-link activeMenuItem">About</a></li>
-                        <li class="menu-item-li"><a href="#services-section" class="menu-item menu-list__item-link">Services</a></li>
-                        <li class="menu-item-li"><a href="#projects-section" class="menu-item menu-list__item-link">Projects</a></li>
-                        <li class="menu-item-li"><a href="#tools-section" class="menu-item menu-list__item-link">Tools</a></li>
-                        <li class="menu-item-li"><a href="#contact-section" class="menu-item menu-list__item-link">Contact me</a></li>
-                    </ul>
-                </nav>
-                <a href="#" class="menu-btn">
-                    <span></span>
-                </a>
-            </div>
-        </div>
-    </header>
+    @@include('html/header.html', {})
+
     <main>
         <section id="about-section" class="section about-section">
             <div class="greeting-block">
@@ -51,7 +18,7 @@
                             <p><span class="speciality">Front-End developer</span></p>
                         </div>
                         <div class="avatar-container">
-                            <img src="./pictures/newAvatar.png" alt="">
+                            <img src="./img/newAvatar.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -100,7 +67,7 @@
                                         <img src="https://assets.codepen.io/1462889/sea.png" alt="">
                                     </div> -->
                                     <div class="img-wrap img-1 card-front__img">
-                                        <img src="./pictures/Services.png" alt="">
+                                        <img src="./img/Services.png" alt="">
                                     </div>
                                     <!-- <div class="img-wrap img-3 card-front__img">
                                         <img src="https://assets.codepen.io/1462889/water.png" alt="">
@@ -128,7 +95,7 @@
                                         <img src="https://assets.codepen.io/1462889/grass.png" alt="">
                                     </div> -->
                                     <div class="img-wrap img-4 card-back__img">
-                                        <img src="./pictures/Coding.png" alt="">
+                                        <img src="./img/Coding.png" alt="">
                                     </div>
                                     <!-- <div class="img-wrap img-5 card-back__img">
                                         <img src="https://assets.codepen.io/1462889/Ivy.png" alt="">
@@ -167,49 +134,49 @@
                 <div class="projects__inner">
                     <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
                     </div>
                     <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
                     </div>
                     <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
                     </div>
                     <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
                     </div>
                     <!-- <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
                     </div>
                     <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
                     </div>
                     <div class="projects-item">
                         <div class="imgWrapper">
-                            <img src="./pictures/project.png" alt="">
+                            <img src="./img/project.png" alt="">
                             <a href="" class="projectButton">Show project</a>
                         </div>
                         <h3>Title</h3>
@@ -227,27 +194,27 @@
                 <div class="tools-container">
                     <div class="video__wrapper">
                         <video js-lazy playsinline autoplay muted loop data-ll-status="loaded">
-                            <source data-src="/pictures/IMG_2332.webm" type="video/webm" src="./pictures/IMG_2332.webm">
+                            <source data-src="/img/IMG_2332.webm" type="video/webm" src="./img/IMG_2332.webm">
                         </video>
                     </div>
                     <div class="tools-wrapper">
                         <div class="tool">
-                            <img src="./pictures/js-wb.png" alt="JavaScript">
+                            <img src="./img/js-wb.png" alt="JavaScript">
                         </div>
                         <div class="tool">
-                            <img src="./pictures/git-wb.png" alt="Git">
+                            <img src="./img/git-wb.png" alt="Git">
                         </div>
                         <div class="tool">
-                            <img src="./pictures/gulp-wb.png" alt="Gulp">
+                            <img src="./img/gulp-wb.png" alt="Gulp">
                         </div>
                         <div class="tool">
-                            <img src="./pictures/photoshop-wb.png" alt="Photoshop">
+                            <img src="./img/photoshop-wb.png" alt="Photoshop">
                         </div>
                         <div class="tool">
-                            <img src="./pictures/sass-wb.png" alt="Sass">
+                            <img src="./img/sass-wb.png" alt="Sass">
                         </div>
                         <div class="tool">
-                            <img src="./pictures/vs-code-wb.png" alt="Visual Studio Code">
+                            <img src="./img/vs-code-wb.png" alt="Visual Studio Code">
                         </div>
 
                     </div>
@@ -268,27 +235,11 @@
             </div>
         </a>
     </main>
-    <footer>
-        <section id="contact-section" class="section contact-section">
-            <div class="footer-container">
-                <div class="page-title">
-                    <div class="footer-title">
-                        <p class="title-phrase">contact with me</p>
-                        <div class="footer-title__inner">
-                            <h2>Say Hello</h2>
-                            <a href="mailto:danil.fomchik@gmail.com" class="projectButton">danil.fomchik@gmail.com</a>
-                        </div>
-                    </div>
-                    <!-- <div class="bg-title">
-                        <span>contact</span>
-                    </div> -->
-                </div>
-            </div>
-        </section>
-    </footer>
+
+    @@include('html/footer.html', {})
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://kit.fontawesome.com/6cb87dd491.js" crossorigin="anonymous"></script>
-    <script src="./js/custom.js"></script>
+    <script src="js/app.min.js"></script>
 </body>
 </html>

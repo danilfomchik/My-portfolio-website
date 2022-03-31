@@ -1,69 +1,58 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const browserSync = require('browser-sync').create();
-const webpackStream = require('webpack-stream');
-const webpack = require('webpack');
-const concat = require('gulp-concat');
-const gsap = require('gsap/dist/gsap.js');
+// основной модуль
+import gulp from "gulp";
+// импорт путей
+import { path } from "./gulp/config/path.js";
+// импорт общих плагинов
+import { plugins } from "./gulp/config/plugins.js";
 
-function style() {
-    return gulp.src('./scss/**/*.scss').pipe(sass()).pipe(gulp.dest('./css')).pipe(browserSync.stream());
+// передаем значения в глобальную переменную
+global.app = {
+    isBuild: process.argv.includes('--build'),
+    isDev: !process.argv.includes('--build'),
+    path: path,
+    gulp: gulp,
+    plugins: plugins
 }
 
-function watch() {
-    browserSync.init({
-        server: {
-            baseDir: './'
-        },
-        ghostMode: { clicks: false },
-		notify: false,
-		online: true,
-    });
-    gulp.watch('./scss/**/*.scss', style);
-    gulp.watch('./*.html').on('change', browserSync.reload);
-    gulp.watch('./js/*.js').on('change', browserSync.reload);
+// импорт задач
+import { copy } from "./gulp/tasks/copy.js";
+import { reset } from "./gulp/tasks/reset.js";
+import { html } from "./gulp/tasks/html.js";
+import { server } from "./gulp/tasks/server.js";
+import { scss } from "./gulp/tasks/scss.js";
+import { js } from "./gulp/tasks/js.js";
+import { images } from "./gulp/tasks/images.js";
+import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
+import { zip } from "./gulp/tasks/zip.js";
+import { ftp } from "./gulp/tasks/ftp.js";
+
+// наблюдатель за изменениями в файлах
+function watcher() {
+    gulp.watch(path.watch.files, copy);
+    gulp.watch(path.watch.html, html);
+    gulp.watch(path.watch.scss, scss);
+    gulp.watch(path.watch.js, js);
+    gulp.watch(path.watch.images, images);
 }
 
-function scripts() {
-	return src('./js/*.js')
-		.pipe(webpackStream({
-			mode: 'production',
-			performance: { hints: false },
-			plugins: [
-				new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }), // jQuery (npm i jquery)
-			],
-			module: {
-				rules: [
-					{
-						test: /\.m?js$/,
-						exclude: /(node_modules)/,
-						use: {
-							loader: 'babel-loader',
-							options: {
-								presets: ['@babel/preset-env'],
-								plugins: ['babel-plugin-root-import']
-							}
-						}
-					}
-				]
-			},
-			optimization: {
-				minimize: true,
-				minimizer: [
-					new TerserPlugin({
-						terserOptions: { format: { comments: false } },
-						extractComments: false
-					})
-				]
-			},
-		}, webpack)).on('error', function handleError() {
-			this.emit('end')
-		})
-		.pipe(concat('app.min.js'))
-		.pipe(dest('./js'))
-		.pipe(browserSync.stream())
-}
+// fonts 
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-exports.style = style;
-exports.watch = watch;
-exports.scripts = scripts;
+// основные задачи
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+
+// построение сценариев выполнения задач
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
+
+// экспорт сценариев
+export { dev }
+export { build }
+export { deployZIP }
+export { deployFTP }
+
+
+// выполнение сценария по умолчанию
+gulp.task('default', dev);
