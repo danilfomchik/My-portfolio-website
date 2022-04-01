@@ -4,10 +4,14 @@ import * as flip3dCard from "./modules/flip3d.js"
 import * as cursor from "./modules/cursor.js"
 import * as scrollUp from "./modules/scrollUp.js"
 import * as activeMenu from "./modules/activeMenu.js"
+import * as activeHeader from "./modules/activeHeader.js"
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
+    // active header
+    activeHeader.activeHeader();
+
     // flip3d card module
     flip3dCard.flip3dCard();
 
