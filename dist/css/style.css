@@ -414,19 +414,6 @@
     margin: 10px 0px !important;
   }
 }
-@media only screen and (max-width: 991px) {
-  .menu-item, .menu-item i {
-    cursor: pointer !important;
-  }
-
-  #cursor, #aura {
-    display: none;
-  }
-
-  * {
-    cursor: auto !important;
-  }
-}
 /* Указываем box sizing */
 *,
 *::before,
@@ -1227,7 +1214,7 @@ header.activeHeader {
   transition: all 180ms ease-in-out;
 }
 .projects-container .projects__inner .projects-item h3 {
-  padding: 15px 0px 0px;
+  padding: 15px 20px 0px;
 }
 .projects-container .projects__inner .imgWrapper {
   display: flex;
