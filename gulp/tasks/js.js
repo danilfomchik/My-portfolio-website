@@ -8,6 +8,20 @@ export const js = () => {
                 message: "Error: <%= error.message %>"
             })
         ))
+        .pipe(
+          app.plugins.if(
+            app.isBuild,
+            app.plugins.babel({
+              presets: [
+                ['@babel/preset-env', {
+                  debug: true,
+                  corejs: 3,
+                  useBuiltIns: "usage"
+                }]
+              ]
+            })
+          )
+        )
         .pipe(webpack({
             mode: app.isBuild ? 'production' : 'development',
             output: {

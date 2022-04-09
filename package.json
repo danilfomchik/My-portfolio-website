@@ -13,12 +13,21 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "> 1%"
+  ],
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.4",
     "browser-sync": "^2.27.9",
     "del": "^6.0.0",
     "fs": "0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
     "gulp-fonter": "^0.3.0",
