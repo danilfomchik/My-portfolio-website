@@ -47,6 +47,7 @@
     "gulp-webp-html-nosvg": "^1.0.6",
     "gulp-webpcss": "^1.1.1",
     "gulp-zip": "^5.1.0",
+    "json-server": "^0.17.0",
     "sass": "^1.49.9",
     "swiper": "^8.0.7",
     "vinyl-ftp": "^0.6.1",
@@ -54,7 +55,5 @@
     "webpack": "^5.70.0",
     "webpack-stream": "^7.0.0"
   },
-  "dependencies": {
-    "json-server": "^0.17.0"
-  }
+  "dependencies": {}
 }

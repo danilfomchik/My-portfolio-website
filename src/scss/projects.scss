@@ -1,0 +1,94 @@
+.projects-container {
+	max-width: 1200px;
+	margin: 0 auto 30px;
+	padding-top: 80px;
+
+	.projects__inner {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
+
+		.projects-item {
+			font-size: 15px;
+			font-weight: normal;
+			letter-spacing: 5px;
+			text-align: center;
+			text-transform: uppercase;
+			line-height: initial;
+			font-family: "Barlow Condensed", sans-serif;
+			color: #ffffff;
+			margin: 30px 15px;
+			flex-basis: 370px;
+			transition: all 180ms ease-in-out;
+
+			h3 {
+				padding: 15px 20px 0px;
+			}
+		}
+		.imgWrapper {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			position: relative;
+			transition: all 180ms ease-in-out;
+
+			.projectButton {
+				position: absolute;
+				border-radius: 4px;
+				padding: 15px;
+				color: white;
+				text-transform: uppercase;
+				font-weight: bold;
+				width: calc(50% - 10px);
+				background-color: #75DAB4;
+				opacity: 0;
+				text-decoration: none;
+				transition: all 180ms ease-in-out;
+			}
+			img {
+				transition: all 180ms ease-in-out;
+				opacity: 1;
+			}
+		}
+		.activeProject {
+			img {
+				opacity: 0.5;
+			}
+			.projectButton {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.bg-title {
+	font-size: calc( 0.0555555556 * 100vw + 53.3333333333px );
+	font-weight: bold;
+	letter-spacing: 30px;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: initial;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-family: "Poppins", sans-serif;
+	-webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+	color: transparent;
+	opacity: 0.3;
+    
+	span {
+		padding: 20px 0px 0px;
+	}
+}

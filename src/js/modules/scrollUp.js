@@ -11,6 +11,7 @@ function scrollUp() {
 
     const getTop = () => window.pageYOffset || document.documentElement.scrollTop;
 
+
     //updateDashOffset
     const updateDashoffset = () => {
         const height = document.documentElement.scrollHeight - window.innerHeight;

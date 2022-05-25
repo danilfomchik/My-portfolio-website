@@ -1,0 +1,19 @@
+{
+    "portfolioCards": [
+        {
+            "link": "https://danilfomchik.github.io/MovieSearcher/",
+            "title": "Movies",
+            "background": "@img/movies.png"
+        },
+        {
+            "link": "https://danilfomchik.github.io/AimGame/",
+            "title": "Aim Game",
+            "background": "@img/aim.png"
+        },
+        {
+            "link": "https://danilfomchik.github.io/MyFirstProject/",
+            "title": "Paint",
+            "background": "@img/paint.png"
+        }
+    ]
+}
