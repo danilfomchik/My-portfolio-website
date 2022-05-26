@@ -1,0 +1,41 @@
+$main-color: #ffffff;
+
+.svg-wrapper{
+    width: 55%;
+    margin: 0 auto;
+
+    // padding: 100px 0px 0px;
+}
+
+path{
+    stroke: $main-color;
+    fill: $main-color;
+
+    stroke-dasharray: 1300;
+    opacity: 10;
+    animation: 3s animate 0s cubic-bezier(0.11, 0.07, 0.94, 0.9);
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dasharray: 1300;
+    }
+
+    30% {
+        opacity: 10;
+        fill: none;
+        stroke-dasharray: 1300;
+    }
+
+    90% {
+        fill: rgba(255,255,255,0);
+    }
+
+    100% {
+        opacity: 10;
+        fill: rgba(255,255,255,1);
+        stroke-dasharray: 0;
+    }
+}

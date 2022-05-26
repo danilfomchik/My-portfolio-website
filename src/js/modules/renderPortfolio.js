@@ -29,7 +29,6 @@ function renderPortfolio() {
 
 
     getCardData('http://localhost:3000/portfolioCards')
-    // getCardData('./db.json')
     .then(data => {
         data.forEach(card => {
             new PortfolioCards(card.link, card.title, card.background, 'projects-item').renderCards();

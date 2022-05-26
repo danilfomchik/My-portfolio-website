@@ -242,6 +242,11 @@
 	.scroll-up {
 		right: 30px !important;
 	}
+
+	.icn{
+		width: 70px !important;
+    	height: 70px !important;
+	}
 }
 @media (max-width: 675px) {
 	.greeting-block {
@@ -310,10 +315,10 @@
 		}
 	}
 	.video__wrapper {
-		width: 430px !important;
+		width: 360px !important;
 		height: 240px !important;
 		video {
-			width: 50% !important;
+			width: 60% !important;
 		}
 	}
 	.page-title {
@@ -327,6 +332,7 @@
 	.scroll-up__wrapper {
 		display: none !important;
 	}
+
 }
 @media (max-width: 575px) {
 	.services-block {

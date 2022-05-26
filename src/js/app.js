@@ -6,6 +6,7 @@ import { scrollUp } from './modules/scrollUp.js'
 import { activeMenu } from './modules/activeMenu.js'
 import { activeHeader } from './modules/activeHeader.js'
 import { renderPortfolio } from './modules/renderPortfolio.js'
+import { shakeTools } from './modules/shakeTools.js'
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -32,4 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // cursor module
     cursor();
+
+    shakeTools();
 });
