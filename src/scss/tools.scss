@@ -94,27 +94,6 @@
 	}
 }
 
-// .video__wrapper {
-// 	background-color: black;
-// 	background-image: url("../img/background2.png");
-// 	width: 495px;
-// 	height: 270px;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-content: center;
-// 	margin: 0 auto;
-
-// 	.video__wrapper-link{
-// 		display: flex;
-// 		justify-content: center;
-// 		align-items: center;
-// 	}
-  
-// 	video {
-// 		width: 60%;
-// 	}
-// }
-
 // ----------------------------- //
 .video__wrapper {
     background-color: black;
@@ -181,4 +160,39 @@
 			}
 		}
 	}
+}
+
+.m-tools-wrapper{
+	display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-wrap: wrap;
+
+	.tool{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex-basis: 175px;
+		text-align: center;
+		margin: 20px 10px;
+		padding: 10px;
+		color: white;
+		transition: all 250ms ease-in;
+
+		img{
+			width: 50%;
+		}
+	}
+}
+
+.tools-block .tools-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px 0px 30px;
 }

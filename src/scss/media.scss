@@ -36,12 +36,8 @@
 			}
 		}
 		.pricing-wrap {
-			.img-1 {
+			.img-1, .img-4 {
 				right: -45px !important;
-				width: calc(20% + 160px) !important;
-			}
-			.img-4 {
-				left: -45px !important;
 				width: calc(20% + 160px) !important;
 			}
 		}
@@ -298,11 +294,8 @@
 			}
 		}
 		.pricing-wrap {
-			.img-1 {
+			.img-1, .img-4 {
 				right: -25px !important;
-			}
-			.img-4 {
-				left: -25px !important;
 			}
 		}
 	}
@@ -333,19 +326,19 @@
 		display: none !important;
 	}
 
+	.icn{
+		width: 60px !important;
+    	height: 60px !important;
+	}
+
 }
 @media (max-width: 575px) {
 	.services-block {
 		.pricing-wrap {
-			.img-1 {
+			.img-1, .img-4 {
 				width: calc(20% + 130px) !important;
 				width: calc(10% + 130px) !important;
 				right: -10px !important;
-			}
-			.img-4 {
-				width: calc(20% + 130px) !important;
-				width: calc(10% + 130px) !important;
-				left: -10px !important;
 			}
 		}
 		.services-container {
@@ -384,9 +377,9 @@
 			justify-content: center !important;
 		}
 	}
-	.card-3d__title {
-		display: none !important;
-	}
+	// .card-3d__title {
+	// 	display: none !important;
+	// }
 	.greeting-block__divider {
 		margin: 0px 0px 10px !important;
 	}
@@ -425,12 +418,32 @@
 		}
 	}
 	.tools-block {
+		padding: 100px 0px 70px !important;
+
 		.tools-container {
 			.tools-wrapper {
 				.tool {
 					flex-basis: 85px !important;
 					margin: 10px 0px !important;
 				}
+			}
+		}
+	}
+
+	.shakeTools-container{
+		.icons-container {
+			display: none !important;
+		}
+	}
+
+	.m-tools-wrapper{
+		display: flex !important;
+
+		.tool{
+			flex-basis: 80px !important;
+
+			img{
+				width: 100% !important;
 			}
 		}
 	}

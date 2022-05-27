@@ -1,0 +1,32 @@
+@import 'variables';
+
+.animatedSvg {
+    width: 100%;
+    height: 25vh;
+    display: flex;
+}
+.filled-heading {
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 92px;
+    line-height: 0.9;
+    font-weight: bold;
+}
+
+#background path {
+    animation: animatedSvgPulse 4s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+#textClip text, #textClip2 text {
+    display: none;
+}
+#textClip text:nth-of-type(n + 1):nth-of-type(-n + 3),
+#textClip2 text:nth-of-type(n + 1):nth-of-type(-n + 3) {
+    display: inline;
+}
+
+@keyframes animatedSvgPulse {
+    0%, 100% { transform: scale(0) rotate(33deg); }
+    35%, 65% { transform: scale(1) rotate(0deg); }
+}

@@ -1,12 +1,4 @@
 function shakeTools() {
-    const video = document.querySelector('.video__wrapper');
-
-    video.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        console.log('shake');
-    });
-
     const btn = document.getElementById("btn");
     const btnBkg = document.getElementById("btn-bkg");
     const btnText = document.getElementById("btn-text");
@@ -57,59 +49,70 @@ function shakeTools() {
         });
     };
 
+
     // Icons spreading animation
+    const video = document.querySelector('.video__wrapper');
+
+    let jsX = -140, jsY = -160, gitX = -200, gitY = 40, gulpX = -90, gulpY = 180, psX = 120, psY = 160, sassX = 200, sassY = -50, vsX = 90, vsY = -180;
+    
+
+    video.addEventListener('click', (e) => {
+        e.preventDefault();
+    });
+
     icons_tl
-        .to("#xd", {
-            x: -140,
-            y: -160,
+        .to("#js", {
+            x: jsX,
+            y: jsY,
             rotate: 10
         })
         .to(
-            "#figma",
+            "#git",
             {
-                x: -200,
-                y: 40,
+                x: gitX,
+                y: gitY,
                 rotate: -20
+            },
+            stagger
+        )
+        .to(
+            "#gulp",
+            {
+                x: gulpX,
+                y: gulpY,
+                rotate: 10
             },
             stagger
         )
         .to(
             "#photoshop",
             {
-                x: -90,
-                y: 180,
-                rotate: 10
-            },
-            stagger
-        )
-        .to(
-            "#sketch",
-            {
-                x: 120,
-                y: 160,
+                x: psX,
+                y: psY,
                 rotate: -20
             },
             stagger
         )
         .to(
-            "#illustrator",
+            "#sass",
             {
-                x: 200,
-                y: -20,
+                x: sassX,
+                y: sassY,
                 rotate: 20
             },
             stagger
         )
         .to(
-            "#invision",
+            "#vs-code",
             {
-                x: 90,
-                y: -180,
+                x: vsX,
+                y: vsY,
                 rotate: -10
             },
             stagger
         );
     icons_tl.pause();
+
 
     btn.addEventListener("mousedown", () => {
         playAni = !playAni;

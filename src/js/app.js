@@ -7,6 +7,8 @@ import { activeMenu } from './modules/activeMenu.js'
 import { activeHeader } from './modules/activeHeader.js'
 import { renderPortfolio } from './modules/renderPortfolio.js'
 import { shakeTools } from './modules/shakeTools.js'
+import { frontSvg } from './modules/frontSvg.js'
+import { backSvg } from './modules/backSvg.js'
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -34,5 +36,12 @@ window.addEventListener('DOMContentLoaded', () => {
     // cursor module
     cursor();
 
+    // shake tools module
     shakeTools();
+
+    // animate services text module
+    frontSvg();
+
+    // animate services text module
+    backSvg();
 });
