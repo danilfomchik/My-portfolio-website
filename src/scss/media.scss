@@ -243,6 +243,12 @@
 		width: 70px !important;
     	height: 70px !important;
 	}
+
+	.services-block .pricing-wrap .img-1, 
+	.services-block .pricing-wrap .img-4{
+		width: calc(20% + 110px) !important;
+	}
+
 }
 @media (max-width: 675px) {
 	.greeting-block {
@@ -343,9 +349,7 @@
 		}
 		.services-container {
 			.card-3d-wrapper {
-				width: 430px !important;
-				height: 390px !important;
-				width: 275px !important;
+				width: 365px !important;
 				height: 355px !important;
 			}
 			.services__choose-block {

@@ -473,6 +473,11 @@
     width: 70px !important;
     height: 70px !important;
   }
+
+  .services-block .pricing-wrap .img-1,
+.services-block .pricing-wrap .img-4 {
+    width: calc(20% + 110px) !important;
+  }
 }
 @media (max-width: 675px) {
   .greeting-block .greeting-block__container .main-info {
@@ -550,9 +555,7 @@
     right: -10px !important;
   }
   .services-block .services-container .card-3d-wrapper {
-    width: 430px !important;
-    height: 390px !important;
-    width: 275px !important;
+    width: 365px !important;
     height: 355px !important;
   }
   .services-block .services-container .services__choose-block {
@@ -1004,7 +1007,7 @@ header.activeHeader {
 .services-block .services-container .card-3d-wrapper .card-3d-container .card-back .pricing-wrap {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: flex-end;
 }
 .services-block .services-container .card-3d-wrapper .card-3d-container .card-back .pricing-wrap h4 {
@@ -1018,7 +1021,7 @@ header.activeHeader {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
