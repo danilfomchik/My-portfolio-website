@@ -9,6 +9,7 @@ import { renderPortfolio } from './modules/renderPortfolio.js'
 import { shakeTools } from './modules/shakeTools.js'
 import { frontSvg } from './modules/frontSvg.js'
 import { backSvg } from './modules/backSvg.js'
+import { contactForm } from './modules/contactForm.js'
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -44,4 +45,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // animate services text module
     backSvg();
+
+    contactForm();
 });
