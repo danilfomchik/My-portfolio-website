@@ -3,7 +3,8 @@ function cursor() {
     //cursor
         const cursor = document.getElementById('cursor'),
         follower = document.getElementById('aura'),
-        documentLinks = document.querySelectorAll('a')
+        documentLinks = document.querySelectorAll('a'),
+        formBtns = document.querySelectorAll('.form-button')
     ;
 
     let mouseX = 0, mouseY = 0, posX = 0, posY = 0;
@@ -45,17 +46,34 @@ function cursor() {
 
     });
 
-    documentLinks.forEach(link => {
-        link.addEventListener('mouseover', () => {
-            cursor.classList.add('activeCursor');
-            follower.classList.add('activeCursor');
-        });
+    // documentLinks.forEach(link => {
+    //     link.addEventListener('mouseover', () => {
+    //         cursor.classList.add('activeCursor');
+    //         follower.classList.add('activeCursor');
+    //     });
 
-        link.addEventListener('mouseout', () => {
-            cursor.classList.remove('activeCursor');
-            follower.classList.remove('activeCursor');
+    //     link.addEventListener('mouseout', () => {
+    //         cursor.classList.remove('activeCursor');
+    //         follower.classList.remove('activeCursor');
+    //     });
+    // });
+
+    function linksHover(selector) {
+        selector.forEach(link => {
+            link.addEventListener('mouseover', () => {
+                cursor.classList.add('activeCursor');
+                follower.classList.add('activeCursor');
+            });
+    
+            link.addEventListener('mouseout', () => {
+                cursor.classList.remove('activeCursor');
+                follower.classList.remove('activeCursor');
+            });
         });
-    });
+    }
+
+    linksHover(documentLinks);
+    linksHover(formBtns);
 
     body.addEventListener('mouseout', (e) => {
         cursor.classList.add('hidden');

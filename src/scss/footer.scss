@@ -59,7 +59,7 @@
 	position: relative;
 	width: 70%;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 520px;
 	background: #ecf0f3;
 	border-radius: 10px;
 	overflow: hidden;
@@ -95,7 +95,7 @@
 				letter-spacing: 0.5px;
 				margin: 15px 0 20px;
 			}
-			input{
+			input, textarea{
 				/* background: #eee; */
 				padding: 12px 15px;
 				margin: 8px 15px;
@@ -106,9 +106,12 @@
 				border-radius: 8px;
 				box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px white;
 				background-color: #ecf0f3;
+
+				resize: none;
+				font-size: 14px;
 			}
 			
-			input:focus-visible{
+			input:focus-visible, textarea:focus-visible{
 				outline-color: transparent;
 			}
 			
@@ -133,6 +136,13 @@
 					align-items: center;
 					border: 1px solid #ccc;
 					border-radius: 50%;
+
+					transition: all 150ms ease-in;
+				}
+
+				a:hover{
+					background-color: #0c0f16;
+					color: #ffffff;
 				}
 			}
 		}
@@ -152,7 +162,15 @@
 
 #signIn, #signUp{
 	background-color: transparent;
-	border: 2px solid #000000;
+	border: 2px solid #0c0f16;
+	color: #0c0f16;
+
+	transition: all 150ms ease-in;
+}
+
+#signIn:hover, #signUp:hover{
+	background-color: #0c0f16;
+	color: #ffffff;
 }
 
 .container.right-panel-active {
@@ -220,6 +238,10 @@
 			width: 50%;
 			transform: translateX(0);
 			transition: transform 0.6s ease-in-out;
+
+			p{
+				padding: 40px 0px;
+			}
 		}
 	}
 }
@@ -232,8 +254,8 @@
 	transform: translateX(0);
 }
 button{
-	color: #000000;
-	background: #39e4a2;
+	color: #ffffff;
+	background: #0c0f16;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 55px;
@@ -246,4 +268,13 @@ button{
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 	// cursor: pointer;
+
+	transition: all 150ms ease-in;
+}
+
+button:hover{
+	background-color: transparent;
+	color: #0c0f16;
+
+	outline: 2px solid #0c0f16;
 }
