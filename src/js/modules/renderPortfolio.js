@@ -51,8 +51,8 @@ function renderPortfolio() {
         });
     };
 
-    projectHover('mouseover');
-    projectHover('mouseout');
+    // projectHover('mouseover');
+    // projectHover('mouseout');
     //hover card
 }
 

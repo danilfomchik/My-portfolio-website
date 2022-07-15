@@ -7,6 +7,8 @@ function activeMenu() {
     const getId = (link) => link.getAttribute('href').substring(1);
 
     const observer = new IntersectionObserver((entries) => {
+        console.log('entries-->', entries);
+
         entries.forEach(entry => {
             if(entry.isIntersecting){
                 menuLinks.forEach(link => {
