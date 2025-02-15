@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "concurrently \"npm:dev\" \"npm:start:server\"",
     "dev": "gulp",
+    "start:server": "npx json-server -p 4000 db.json",
     "build": "gulp build --build",
     "zip": "gulp deployZIP --build",
     "deploy": "gulp deployFTP --build",
@@ -55,5 +57,7 @@
     "webpack": "^5.70.0",
     "webpack-stream": "^7.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
 }
