@@ -1,13 +1,11 @@
 {
-  "name": "gulp-2022",
+  "name": "my-portfolio-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "concurrently \"npm:dev\" \"npm:start:server\"",
     "dev": "gulp",
-    "start:server": "npx json-server --watch -p 4000 db.json",
     "build": "gulp build --build",
     "zip": "gulp deployZIP --build",
     "deploy": "gulp deployFTP --build",

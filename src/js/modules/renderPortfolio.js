@@ -26,7 +26,9 @@ function renderPortfolio() {
         }
     }
 
-    getCardData("http://localhost:4000/portfolioCards").then((data) => {
+    getCardData(
+        "https://my-portfolio-website-api.vercel.app/portfolioCards"
+    ).then((data) => {
         data.forEach((card) => {
             new PortfolioCards(
                 card.link,
