@@ -11,7 +11,8 @@
     "deploy": "gulp deployFTP --build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.js\"",
-    "prettier:fix": "prettier --write \"src/**/*.js\""
+    "prettier:fix": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint ."
   },
   "author": "",
   "license": "ISC",
@@ -26,7 +27,10 @@
     "babel-loader": "^8.2.4",
     "browser-sync": "^2.27.9",
     "del": "^6.0.0",
+    "eslint": "^9.20.1",
+    "eslint-plugin-import": "^2.31.0",
     "fs": "0.0.1-security",
+    "globals": "^15.15.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
@@ -35,7 +39,7 @@
     "gulp-fonter": "^0.3.0",
     "gulp-group-css-media-queries": "^1.2.2",
     "gulp-if": "^3.0.0",
-    "gulp-imagemin": "^8.0.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
@@ -57,5 +61,8 @@
     "webp-converter": "2.2.3",
     "webpack": "^5.70.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gsap": "^3.12.7"
   }
 }

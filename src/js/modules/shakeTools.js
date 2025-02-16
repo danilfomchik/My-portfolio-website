@@ -1,3 +1,5 @@
+import {gsap} from 'gsap';
+
 function shakeTools() {
     const btn = document.getElementById('btn');
     const btnBkg = document.getElementById('btn-bkg');

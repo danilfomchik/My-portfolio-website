@@ -6,64 +6,60 @@ import cleanCss from 'gulp-clean-css'; // сжатие css
 import webpcss from 'gulp-webpcss'; // вывод вебп изображений
 import autoprefixer from 'gulp-autoprefixer'; // добавление вендорных префиксов
 import groupCssMediaQueries from 'gulp-group-css-media-queries'; // групировка меда запросов
-
+import {app} from '../../gulpfile.js';
 
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-    return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
-        .pipe(app.plugins.plumber(
-            app.plugins.notify.onError({
-                title: "SCSS",
-                message: "Error: <%= error.message %>"
-            })
-        ))
-        .pipe(app.plugins.replace(/@img\//g, '../img/'))
-        .pipe(sass({
-            outputStyle: 'expanded'
-        }))
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                groupCssMediaQueries()
+    return (
+        app.gulp
+            .src(app.path.src.scss, {sourcemaps: app.isDev})
+            .pipe(
+                app.plugins.plumber(
+                    app.plugins.notify.onError({
+                        title: 'SCSS',
+                        message: 'Error: <%= error.message %>',
+                    }),
+                ),
             )
-        )
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                autoprefixer({
-                    grid: true,
-                    overrideBrowserslist: ["last 3 versions"],
-                    cascade: true
-                })
+            .pipe(app.plugins.replace(/@img\//g, '../img/'))
+            .pipe(
+                sass({
+                    outputStyle: 'expanded',
+                }),
             )
-        )
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                webpcss({
-                    webpClass: ".webp",
-                    noWebpClass: ".no-webp"
-                })
+            .pipe(app.plugins.if(app.isBuild, groupCssMediaQueries()))
+            .pipe(
+                app.plugins.if(
+                    app.isBuild,
+                    autoprefixer({
+                        grid: true,
+                        overrideBrowserslist: ['last 3 versions'],
+                        cascade: true,
+                    }),
+                ),
             )
-        )
-        // создает копию с не сжатым css кодом(закоментировать если нужен сжатый)
-        // .pipe(app.gulp.dest(app.path.build.css))/
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                cleanCss()
+            .pipe(
+                app.plugins.if(
+                    app.isBuild,
+                    webpcss({
+                        webpClass: '.webp',
+                        noWebpClass: '.no-webp',
+                    }),
+                ),
             )
-        )
-        .pipe(
-            app.plugins.if(
-                app.isBuild,
-                rename({
-                    extname: ".min.css"
-                })
+            // создает копию с не сжатым css кодом(закоментировать если нужен сжатый)
+            // .pipe(app.gulp.dest(app.path.build.css))/
+            .pipe(app.plugins.if(app.isBuild, cleanCss()))
+            .pipe(
+                app.plugins.if(
+                    app.isBuild,
+                    rename({
+                        extname: '.min.css',
+                    }),
+                ),
             )
-        )
-        .pipe(app.gulp.dest(app.path.build.css))
-        .pipe(app.plugins.browsersync.stream())
-    ;
-}
+            .pipe(app.gulp.dest(app.path.build.css))
+            .pipe(app.plugins.browsersync.stream())
+    );
+};

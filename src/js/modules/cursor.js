@@ -1,3 +1,5 @@
+import {gsap} from 'gsap';
+
 function cursor() {
     const body = document.querySelector('body');
     //cursor
@@ -61,7 +63,7 @@ function cursor() {
     linksHover(documentLinks);
     linksHover(formBtns);
 
-    body.addEventListener('mouseout', e => {
+    body.addEventListener('mouseout', () => {
         cursor.classList.add('hidden');
         follower.classList.add('hidden');
     });
