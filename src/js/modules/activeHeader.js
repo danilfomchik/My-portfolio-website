@@ -6,4 +6,4 @@ function activeHeader() {
     });
 }
 
-export { activeHeader };
+export {activeHeader};

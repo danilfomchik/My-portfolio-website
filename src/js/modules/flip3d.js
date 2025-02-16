@@ -7,24 +7,20 @@ function flip3dCard() {
 
     const arrow = document.querySelector('.fa-play');
 
-   // adding classes for img
+    // adding classes for img
     function flipCard(clickingElem, checkedElem) {
-
-        if(clickingElem.dataset.item == checkedElem){
-
-        addActiveClass(cardFrontImg, 'passiveImg');
-        addActiveClass(cardBackImg, 'activeImg');
-        } else{
-
-        removeActiveClass(cardFrontImg, 'passiveImg')
-        removeActiveClass(cardBackImg, 'activeImg')
+        if (clickingElem.dataset.item == checkedElem) {
+            addActiveClass(cardFrontImg, 'passiveImg');
+            addActiveClass(cardBackImg, 'activeImg');
+        } else {
+            removeActiveClass(cardFrontImg, 'passiveImg');
+            removeActiveClass(cardBackImg, 'activeImg');
         }
-
     }
 
-    // flip card by clicking 
+    // flip card by clicking
     checkItem.forEach(item => {
-        item.addEventListener('click', (e) => {
+        item.addEventListener('click', e => {
             //change arrow direction
             changeArrowDirection(e, arrow);
 
@@ -36,17 +32,16 @@ function flip3dCard() {
             card3D.classList.toggle('flip', item.dataset.item == 'coding');
             flipCard(item, 'coding');
         });
-
     });
 
     // find and deactivate elem
-    const getActiveItem = (className) => document.querySelector(className);
-    const deactivateActiveItem = (activeClass) => {
+    const getActiveItem = className => document.querySelector(className);
+    const deactivateActiveItem = activeClass => {
         const active = getActiveItem('.active');
-        if(active){
+        if (active) {
             active.classList.remove(activeClass);
         }
-    }
+    };
 
     // add acrive class
     function addActiveClass(arr, className) {
@@ -60,7 +55,7 @@ function flip3dCard() {
         arr.forEach(img => {
             img.classList.remove(className);
         });
-    } 
+    }
 
     function changeArrowDirection(e, elem) {
         e.preventDefault();
@@ -68,4 +63,4 @@ function flip3dCard() {
     }
 }
 
-export { flip3dCard };
+export {flip3dCard};

@@ -1,42 +1,42 @@
 function shakeTools() {
-    const btn = document.getElementById("btn");
-    const btnBkg = document.getElementById("btn-bkg");
-    const btnText = document.getElementById("btn-text");
-    const btnIcon = document.getElementById("btn-icon");
-    const btnShadow = document.getElementById("btn-shadow");
+    const btn = document.getElementById('btn');
+    const btnBkg = document.getElementById('btn-bkg');
+    const btnText = document.getElementById('btn-text');
+    const btnIcon = document.getElementById('btn-icon');
+    const btnShadow = document.getElementById('btn-shadow');
     const dur = 0.3;
-    const white = "#D1D9DF";
-    const black = "#090909";
-    const red = "#FC0502";
-    const stagger = "-=0.3";
+    const white = '#D1D9DF';
+    const black = '#090909';
+    const red = '#FC0502';
+    const stagger = '-=0.3';
     let playAni = false;
 
     // Button setup
     gsap.set(btnBkg, {
         backgroundColor: white,
-        borderBottom: `5px solid ${red}`
+        borderBottom: `5px solid ${red}`,
     });
     gsap.set(btnText, {
         xPercent: 10,
-        yPercent: 100
+        yPercent: 100,
     });
     gsap.set(btnIcon, {
         xPercent: 400,
         yPercent: 620,
-        opacity: 0
+        opacity: 0,
     });
     gsap.set(btnShadow, {
         xPercent: 20,
         yPercent: 20,
-        scale: 1
+        scale: 1,
     });
 
     // Setup timelines
     let icons_tl = gsap.timeline({
         defaults: {
             duration: 0.4,
-            ease: "back.out"
-        }
+            ease: 'back.out',
+        },
     });
     let main_tl = gsap.timeline();
 
@@ -44,77 +44,85 @@ function shakeTools() {
     const shake = () => {
         gsap.to(btn, 0.5, {
             keyframes: {
-                rotateZ: ["-3", "3", "-3", "3", "-3", "3", "-3", "3", "-3", "3", "0"]
-            }
+                rotateZ: ['-3', '3', '-3', '3', '-3', '3', '-3', '3', '-3', '3', '0'],
+            },
         });
     };
-
 
     // Icons spreading animation
     const video = document.querySelector('.video__wrapper');
 
-    let jsX = -140, jsY = -160, gitX = -200, gitY = 40, gulpX = -90, gulpY = 180, psX = 120, psY = 160, sassX = 200, sassY = -50, vsX = 90, vsY = -180;
-    
+    let jsX = -140,
+        jsY = -160,
+        gitX = -200,
+        gitY = 40,
+        gulpX = -90,
+        gulpY = 180,
+        psX = 120,
+        psY = 160,
+        sassX = 200,
+        sassY = -50,
+        vsX = 90,
+        vsY = -180;
 
-    video.addEventListener('click', (e) => {
+    video.addEventListener('click', e => {
         e.preventDefault();
     });
 
     icons_tl
-        .to("#js", {
+        .to('#js', {
             x: jsX,
             y: jsY,
-            rotate: 10
+            rotate: 10,
         })
         .to(
-            "#git",
+            '#git',
             {
                 x: gitX,
                 y: gitY,
-                rotate: -20
+                rotate: -20,
             },
-            stagger
+            stagger,
         )
         .to(
-            "#gulp",
+            '#gulp',
             {
                 x: gulpX,
                 y: gulpY,
-                rotate: 10
+                rotate: 10,
             },
-            stagger
+            stagger,
         )
         .to(
-            "#photoshop",
+            '#photoshop',
             {
                 x: psX,
                 y: psY,
-                rotate: -20
+                rotate: -20,
             },
-            stagger
+            stagger,
         )
         .to(
-            "#sass",
+            '#sass',
             {
                 x: sassX,
                 y: sassY,
-                rotate: 20
+                rotate: 20,
             },
-            stagger
+            stagger,
         )
         .to(
-            "#vs-code",
+            '#vs-code',
             {
                 x: vsX,
                 y: vsY,
-                rotate: -10
+                rotate: -10,
             },
-            stagger
+            stagger,
         );
     icons_tl.pause();
 
-
-    btn.addEventListener("mousedown", () => {
+    btn.addEventListener('mousedown', () => {
         playAni = !playAni;
 
         if (playAni) {
@@ -122,7 +130,7 @@ function shakeTools() {
                 .to(btnBkg, dur, {
                     scale: 1.3,
                     backgroundColor: black,
-                    borderBottom: `5px solid ${black}`
+                    borderBottom: `5px solid ${black}`,
                 })
                 .to(
                     btnShadow,
@@ -130,9 +138,9 @@ function shakeTools() {
                     {
                         xPercent: -40,
                         yPercent: 60,
-                        scale: 1.7
+                        scale: 1.7,
                     },
-                    "<"
+                    '<',
                 )
                 .to(
                     btnText,
@@ -140,9 +148,9 @@ function shakeTools() {
                     {
                         xPercent: 10 - 20,
                         yPercent: 120 + 20,
-                        color: white
+                        color: white,
                     },
-                    "<"
+                    '<',
                 )
                 .to(
                     btnIcon,
@@ -151,11 +159,11 @@ function shakeTools() {
                         xPercent: 280,
                         yPercent: 620,
                         keyframes: {
-                            opacity: [0, 0, 1]
+                            opacity: [0, 0, 1],
                         },
-                        delay: 0.2
+                        delay: 0.2,
                     },
-                    "<"
+                    '<',
                 )
                 .add(shake)
                 .add(icons_tl.play());
@@ -166,8 +174,8 @@ function shakeTools() {
                     xPercent: 400,
                     yPercent: 620,
                     keyframes: {
-                        opacity: [1, 0, 0]
-                    }
+                        opacity: [1, 0, 0],
+                    },
                 })
                 .add(icons_tl.reverse())
                 .to(
@@ -176,9 +184,9 @@ function shakeTools() {
                     {
                         scale: 1,
                         backgroundColor: white,
-                        borderBottom: `5px solid ${red}`
+                        borderBottom: `5px solid ${red}`,
                     },
-                    "-=0.3"
+                    '-=0.3',
                 )
                 .to(
                     btnShadow,
@@ -186,9 +194,9 @@ function shakeTools() {
                     {
                         xPercent: 20,
                         yPercent: 20,
-                        scale: 1
+                        scale: 1,
                     },
-                    "-=0.3"
+                    '-=0.3',
                 )
                 .to(
                     btnText,
@@ -196,13 +204,12 @@ function shakeTools() {
                     {
                         xPercent: 10,
                         yPercent: 100,
-                        color: black
+                        color: black,
                     },
-                    "<"
+                    '<',
                 );
         }
     });
-
 }
 
-export { shakeTools }
+export {shakeTools};

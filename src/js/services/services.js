@@ -1,9 +1,9 @@
 const postData = async (url, data) => {
     const res = await fetch(url, {
-        method: "POST",
+        method: 'POST',
         body: data,
         headers: {
-            "Content-type": "application/json",
+            'Content-type': 'application/json',
         },
     });
 
@@ -20,4 +20,4 @@ async function getCardData(url) {
     return await res.json();
 }
 
-export { getCardData, postData };
+export {getCardData, postData};

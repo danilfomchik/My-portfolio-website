@@ -1,13 +1,11 @@
 $main-color: #ffffff;
 
-.svg-wrapper{
+.svg-wrapper {
     width: 55%;
     margin: 0 auto;
-
-    // padding: 100px 0px 0px;
 }
 
-path{
+path {
     stroke: $main-color;
     fill: $main-color;
 
@@ -30,12 +28,12 @@ path{
     }
 
     90% {
-        fill: rgba(255,255,255,0);
+        fill: rgba(255, 255, 255, 0);
     }
 
     100% {
         opacity: 10;
-        fill: rgba(255,255,255,1);
+        fill: rgba(255, 255, 255, 1);
         stroke-dasharray: 0;
     }
 }

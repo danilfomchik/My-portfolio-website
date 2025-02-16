@@ -1,9 +1,9 @@
-import { animateSvg } from "./animateSvg.js";
+import {animateSvg} from './animateSvg.js';
 
 function frontSvg() {
-    const frontSvg = document.querySelectorAll("#textClip .text1");
+    const frontSvg = document.querySelectorAll('#textClip .text1');
 
     animateSvg(frontSvg);
 }
 
-export { frontSvg }
+export {frontSvg};

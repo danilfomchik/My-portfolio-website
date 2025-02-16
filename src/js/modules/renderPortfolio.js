@@ -1,8 +1,8 @@
-import { getCardData } from "../services/services.js";
-import { cursor } from "./cursor.js";
+import {getCardData} from '../services/services.js';
+import {cursor} from './cursor.js';
 
 function renderPortfolio() {
-    const cardsContainer = document.querySelector(".projects__inner");
+    const cardsContainer = document.querySelector('.projects__inner');
 
     class PortfolioCards {
         constructor(link, title, background) {
@@ -26,38 +26,27 @@ function renderPortfolio() {
         }
     }
 
-    getCardData(
-        "https://my-portfolio-website-api.vercel.app/portfolioCards"
-    ).then((data) => {
-        data.forEach((card) => {
-            new PortfolioCards(
-                card.link,
-                card.title,
-                card.background,
-                "projects-item"
-            ).renderCards();
+    getCardData('https://my-portfolio-website-api.vercel.app/portfolioCards').then(data => {
+        data.forEach(card => {
+            new PortfolioCards(card.link, card.title, card.background, 'projects-item').renderCards();
         });
 
-        projectHover("mouseover");
-        projectHover("mouseout");
+        projectHover('mouseover');
+        projectHover('mouseout');
 
         cursor();
     });
 
     //hover card
     function projectHover(action) {
-        const imgWrapper = document.querySelectorAll(".imgWrapper");
+        const imgWrapper = document.querySelectorAll('.imgWrapper');
 
-        imgWrapper.forEach((wrapper) => {
+        imgWrapper.forEach(wrapper => {
             wrapper.addEventListener(action, () => {
-                wrapper.classList.toggle("activeProject");
+                wrapper.classList.toggle('activeProject');
             });
         });
     }
-
-    // projectHover('mouseover');
-    // projectHover('mouseout');
-    //hover card
 }
 
-export { renderPortfolio };
+export {renderPortfolio};

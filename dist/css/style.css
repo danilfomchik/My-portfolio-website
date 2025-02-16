@@ -303,7 +303,8 @@
     width: 580px !important;
     height: 445px !important;
   }
-  .services-block .pricing-wrap .img-1, .services-block .pricing-wrap .img-4 {
+  .services-block .pricing-wrap .img-1,
+.services-block .pricing-wrap .img-4 {
     right: -45px !important;
     width: calc(20% + 160px) !important;
   }
@@ -496,8 +497,12 @@
     flex-basis: 110px !important;
   }
 
-  .scroll-up__wrapper {
-    display: none !important;
+  .scroll-up__wrapper .scroll-up.scroll-up--active {
+    width: 40px;
+    height: 40px;
+  }
+  .scroll-up__wrapper .scroll-up.scroll-up--active::before {
+    font-size: 16px;
   }
 
   .icn {
@@ -514,7 +519,8 @@
     padding: 0 25px !important;
   }
 
-  .overlay .overlay-left, .overlay .overlay-right {
+  .overlay .overlay-left,
+.overlay .overlay-right {
     padding: 0px 20px !important;
   }
 }
@@ -553,7 +559,8 @@
     width: 490px !important;
     height: 390px !important;
   }
-  .services-block .pricing-wrap .img-1, .services-block .pricing-wrap .img-4 {
+  .services-block .pricing-wrap .img-1,
+.services-block .pricing-wrap .img-4 {
     right: -25px !important;
   }
 
@@ -588,7 +595,8 @@
   }
 }
 @media (max-width: 575px) {
-  .services-block .pricing-wrap .img-1, .services-block .pricing-wrap .img-4 {
+  .services-block .pricing-wrap .img-1,
+.services-block .pricing-wrap .img-4 {
     width: calc(20% + 130px) !important;
     width: calc(10% + 130px) !important;
     right: -10px !important;
@@ -987,7 +995,7 @@ header.activeHeader {
   width: 100%;
 }
 .services-block .services-container .services__choose-block .services__check-item.active {
-  background-color: #75DAB4;
+  background-color: #75dab4;
   color: #022d28;
   pointer-events: none;
 }
@@ -1655,14 +1663,16 @@ header.activeHeader {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   margin: 0 auto 50px;
 }
-.container .sign-up, .container .sign-in {
+.container .sign-up,
+.container .sign-in {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
 }
-.container .sign-up form, .container .sign-in form {
+.container .sign-up form,
+.container .sign-in form {
   background: #ecf0f3;
   display: flex;
   align-items: center;
@@ -1672,47 +1682,57 @@ header.activeHeader {
   height: 100%;
   text-align: center;
 }
-.container .sign-up form h1, .container .sign-in form h1 {
+.container .sign-up form h1,
+.container .sign-in form h1 {
   font-weight: bold;
   margin: 0;
 }
-.container .sign-up form p, .container .sign-in form p {
+.container .sign-up form p,
+.container .sign-in form p {
   font-size: 14px;
   font-weight: 100;
   line-height: 20px;
   letter-spacing: 0.5px;
   margin: 15px 0 20px;
 }
-.container .sign-up form input, .container .sign-up form textarea, .container .sign-in form input, .container .sign-in form textarea {
-  /* background: #eee; */
+.container .sign-up form input,
+.container .sign-up form textarea,
+.container .sign-in form input,
+.container .sign-in form textarea {
   padding: 12px 15px;
   margin: 8px 15px;
   width: 100%;
   border-radius: 5px;
   border: none;
-  /* outline: none; */
   border-radius: 8px;
   box-shadow: inset 2px 2px 4px #d1d9e6, inset -2px -2px 4px white;
   background-color: #ecf0f3;
   resize: none;
   font-size: 14px;
 }
-.container .sign-up form input:focus-visible, .container .sign-up form textarea:focus-visible, .container .sign-in form input:focus-visible, .container .sign-in form textarea:focus-visible {
+.container .sign-up form input:focus-visible,
+.container .sign-up form textarea:focus-visible,
+.container .sign-in form input:focus-visible,
+.container .sign-in form textarea:focus-visible {
   outline-color: transparent;
 }
-.container .sign-up form a, .container .sign-in form a {
+.container .sign-up form a,
+.container .sign-in form a {
   color: #333;
   font-size: 14px;
   text-decoration: none;
   margin: 15px 0;
 }
-.container .sign-up form button:active, .container .sign-in form button:active {
+.container .sign-up form button:active,
+.container .sign-in form button:active {
   transform: scale(0.9);
 }
-.container .sign-up form .social-container, .container .sign-in form .social-container {
+.container .sign-up form .social-container,
+.container .sign-in form .social-container {
   margin: 20px 0;
 }
-.container .sign-up form .social-container a, .container .sign-in form .social-container a {
+.container .sign-up form .social-container a,
+.container .sign-in form .social-container a {
   height: 40px;
   width: 40px;
   margin: 0 5px;
@@ -1723,7 +1743,8 @@ header.activeHeader {
   border-radius: 50%;
   transition: all 150ms ease-in;
 }
-.container .sign-up form .social-container a:hover, .container .sign-in form .social-container a:hover {
+.container .sign-up form .social-container a:hover,
+.container .sign-in form .social-container a:hover {
   background-color: #0c0f16;
   color: #ffffff;
 }
@@ -1739,14 +1760,16 @@ header.activeHeader {
   z-index: 2;
 }
 
-#signIn, #signUp {
+#signIn,
+#signUp {
   background-color: transparent;
   border: 2px solid #0c0f16;
   color: #0c0f16;
   transition: all 150ms ease-in;
 }
 
-#signIn:hover, #signUp:hover {
+#signIn:hover,
+#signUp:hover {
   background-color: #0c0f16;
   color: #ffffff;
 }
@@ -1788,17 +1811,16 @@ header.activeHeader {
 .overlay-container .overlay {
   position: relative;
   color: #000000;
-  /* background: #ff416c; */
   background-color: #ecf0f3;
   left: -100%;
   height: 100%;
   width: 200%;
-  /* background: linear-gradient(to right, #ff4b28, #ff228c); */
   background-color: #ecf0f3;
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
-.overlay-container .overlay .overlay-left, .overlay-container .overlay .overlay-right {
+.overlay-container .overlay .overlay-left,
+.overlay-container .overlay .overlay-right {
   position: absolute;
   display: flex;
   align-items: center;
@@ -1812,7 +1834,8 @@ header.activeHeader {
   transform: translateX(0);
   transition: transform 0.6s ease-in-out;
 }
-.overlay-container .overlay .overlay-left p, .overlay-container .overlay .overlay-right p {
+.overlay-container .overlay .overlay-left p,
+.overlay-container .overlay .overlay-right p {
   padding: 40px 0px;
 }
 
@@ -1833,7 +1856,6 @@ button {
   padding: 12px 55px;
   margin: 20px;
   border-radius: 20px;
-  /* border: 1px solid #39e4a2; */
   border: none;
   outline: none;
   letter-spacing: 1px;
