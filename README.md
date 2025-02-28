@@ -1,7 +1,15 @@
 # My Portfolio Website
 
 This is my personal portfolio website, created to showcase my skills, projects, and achievements.  
-You can view it here: [my-portfolio-website-lovat.vercel.app](https://my-portfolio-website-lovat.vercel.app).
+Live demo: [My Portfolio](https://my-portfolio-website-lovat.vercel.app).
+
+## Screenshots
+
+![Home Section](./public/screenshots/home.png)
+![Services Section](./public/screenshots/services.png)
+![Projects Section](./public/screenshots/projects.png)
+![Tools Section](./public/screenshots/tools.png)
+![Contact Section](./public/screenshots/contact.png)
 
 ## Technologies
 
@@ -10,6 +18,8 @@ The website is built using the following technologies:
 - **HTML** – page structure
 - **SCSS** – styling and design
 - **JavaScript** – interactivity and functionality
+- **Gulp** – task automation for development
+- **GSAP** – animations and smooth transitions
 
 ## Project Structure
 
@@ -43,6 +53,6 @@ To run the project locally, follow these steps:
 ## Features
 
 - Fully responsive design
-- Smooth animations
+- Smooth animations with GSAP
 - Modular SCSS structure
 - Optimized for performance
