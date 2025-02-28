@@ -1,6 +1,9 @@
-.footer-container {
+.contact-section {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.footer-container {
     .footer-title__inner {
         display: flex;
         flex-direction: column;
@@ -57,8 +60,7 @@
 
 .container {
     position: relative;
-    width: 70%;
-    max-width: 100%;
+    max-width: 1200px;
     min-height: 520px;
     background: #ecf0f3;
     border-radius: 10px;
