@@ -733,7 +733,17 @@ body::-webkit-scrollbar-thumb {
   border-radius: 100vh;
 }
 
-h1, h2, h3, h4, p, li, figure, figcaption, blockquote, dl, dd {
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
@@ -750,7 +760,10 @@ article > * + * {
   margin-top: 1em;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
