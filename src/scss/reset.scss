@@ -1,64 +1,77 @@
 * {
-	box-sizing: border-box;
-	cursor: none;
-	&::before {
-		box-sizing: border-box;
-	}
-	&::after {
-		box-sizing: border-box;
-	}
+    box-sizing: border-box;
+    cursor: none;
+    &::before {
+        box-sizing: border-box;
+    }
+    &::after {
+        box-sizing: border-box;
+    }
 }
 ul[class] {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 ol[class] {
-	padding: 0;
-	margin: 0;
-	list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 body {
-	margin: 0;
-	min-height: 100vh;
-	scroll-behavior: smooth;
-	text-rendering: optimizeSpeed;
-	line-height: 1.5;
-	font-family: "Poppins", sans-serif;
-	background-color: #0c0f16;
+    margin: 0;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0c0f16;
 
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-  &::-webkit-scrollbar-track {
-    background: #1f2937;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    border-radius: 100vh;
-  }
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #1f2937;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #ffffff;
+        border-radius: 100vh;
+    }
 }
-h1, h2, h3, h4, p, li, figure, figcaption, blockquote, dl, dd,  {
-	margin: 0;
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
 }
 a {
-	&:not([class]) {
-		text-decoration-skip-ink: auto;
-	}
+    &:not([class]) {
+        text-decoration-skip-ink: auto;
+    }
 }
 img {
-	max-width: 100%;
-	display: block;
+    max-width: 100%;
+    display: block;
 }
 article {
-	>* {
-		+ {
-			* {
-				margin-top: 1em;
-			}
-		}
-	}
+    > * {
+        + {
+            * {
+                margin-top: 1em;
+            }
+        }
+    }
 }
-input, button, textarea, select {
-	font: inherit;
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }
