@@ -3,15 +3,14 @@
 This is my personal portfolio website, created to showcase my skills, projects, and achievements.  
 Live demo: [My Portfolio](https://my-portfolio-website-lovat.vercel.app).
 
-## Screenshots
+## 🚀 Features
 
-![Home Section](./public/screenshots/home.png)
-![Services Section](./public/screenshots/services.png)
-![Projects Section](./public/screenshots/projects.png)
-![Tools Section](./public/screenshots/tools.png)
-![Contact Section](./public/screenshots/contact.png)
+- Fully responsive design
+- Smooth animations with GSAP
+- Modular SCSS structure
+- Optimized for performance
 
-## Technologies
+## 🛠️ Technologies
 
 The website is built using the following technologies:
 
@@ -21,7 +20,7 @@ The website is built using the following technologies:
 - **Gulp** – task automation for development
 - **GSAP** – animations and smooth transitions
 
-## Project Structure
+## 📂 Project Structure
 
 Key directories and files in the project:
 
@@ -29,7 +28,7 @@ Key directories and files in the project:
 - `dist/` – production build
 - `gulp/` – Gulp tasks and configurations
 
-## Installation & Usage
+## 📦 Installation & Usage
 
 To run the project locally, follow these steps:
 
@@ -50,9 +49,20 @@ To run the project locally, follow these steps:
     npm run dev
     ```
 
-## Features
+## 📸 Screenshots
+<details>
+<summary>Screenshots</summary>
+<br>
 
-- Fully responsive design
-- Smooth animations with GSAP
-- Modular SCSS structure
-- Optimized for performance
+![Home Section](./public/screenshots/home.png)
+![Services Section](./public/screenshots/services.png)
+![Projects Section](./public/screenshots/projects.png)
+![Tools Section](./public/screenshots/tools.png)
+![Contact Section](./public/screenshots/contact.png)
+</details>
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+Feel free to contribute or open issues if you find any bugs! 🚀
