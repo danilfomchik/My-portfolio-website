@@ -49,17 +49,9 @@ To run the project locally, follow these steps:
     npm run dev
     ```
 
-## 📸 Screenshots
-<details>
-<summary>Screenshots</summary>
-<br>
+## 📸 Project Demo
 
-![Home Section](./public/screenshots/home.png)
-![Services Section](./public/screenshots/services.png)
-![Projects Section](./public/screenshots/projects.png)
-![Tools Section](./public/screenshots/tools.png)
-![Contact Section](./public/screenshots/contact.png)
-</details>
+![Project Demo](./public/project_demo.gif)
 
 ## 📜 License
 
